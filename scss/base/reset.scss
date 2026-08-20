@@ -1,17 +1,100 @@
-* {
-    padding: 0;
-    margin: 0;
+@use "vars" as *;
+@use "utilities" as *;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
+html {
+  max-width: 100%;
+  color-scheme: dark;
+  overflow-x: hidden;
+  overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #191919;
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 10% 5%, rgb(139 92 246 / 14%), transparent 27rem),
+    radial-gradient(circle at 92% 28%, rgb(34 211 238 / 8%), transparent 25rem),
+    $color-background;
+  color: $color-text;
+  font-family: $font-body;
+  line-height: 1.6;
+  overflow-x: hidden;
+  overflow-x: clip;
+  text-rendering: optimizeLegibility;
+}
+
+// Una trama muy tenue aporta profundidad sin sumar imágenes ni JavaScript.
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 2.2%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(255 255 255 / 2.2%) 1px, transparent 1px);
+  background-size: 3.5rem 3.5rem;
+  content: "";
+  mask-image: linear-gradient(to bottom, #000, transparent 78%);
+  pointer-events: none;
+}
+
+main,
+header,
+footer,
+section,
+.container {
+  min-width: 0;
+  max-width: 100%;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  max-inline-size: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+::selection {
+  background: $color-primary;
+  color: #fff;
 }

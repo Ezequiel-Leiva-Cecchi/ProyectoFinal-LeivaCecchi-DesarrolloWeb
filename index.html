@@ -1,397 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es-AR">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="¡Bienvenido a nuestra increíble página de ventas de videojuegos, el destino perfecto para los entusiastas del gaming! Aquí en nuestra plataforma, encontrarás una amplia selección de los juegos más emocionantes y populares del mercado. Sumérgete en un universo lleno de acción, aventuras épicas y desafíos emocionantes con solo unos clics.
-    Nuestra página de ventas de videojuegos está diseñada pensando en los jugadores de todas las edades y preferencias. Ya sea que te apasione la estrategia, los juegos de rol, los shooters, los deportes, los juegos de simulación o cualquier otro género, estamos seguros de tener algo especial para ti. Trabajamos con los principales desarrolladores y editoriales de la industria, lo que garantiza que siempre tengamos los títulos más recientes y emocionantes disponibles para que los disfrutes.">
-    <meta name="keywords" content="Venta,videojuegos,Gamer World,Gaming">
-    <title>Gamer World</title>
-    <!--Link favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/GAMER WORLD.jpg">
-    <!--link a bootstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-    <!--link a css-->
-    <link rel="stylesheet" href="css/style.css">
-
-
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gamer World: catálogo educativo de videojuegos para PlayStation y Xbox, diseñado como proyecto final de Desarrollo Web.">
+  <title>Gamer World | Videojuegos para todos</title>
+  <link rel="icon" href="assets/GAMER%20WORLD.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
+  <!-- Acceso rápido para personas que navegan con teclado. -->
+  <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
 
-    <header>
-        <!--Enlaces relativos-->
-        <!--Menu nav-->
-        <nav>
-            <div class="navbar navbar-expand-lg">
+  <!-- Encabezado compartido por todo el sitio. -->
+  <header class="site-header">
+    <div class="header-shell">
+      <a class="brand" href="index.html" aria-label="Gamer World, página de inicio">
+        <img class="brand__logo" src="assets/GAMER%20WORLD.jpg" width="500" height="500" alt="">
+        <span class="brand__name">Gamer World</span>
+      </a>
 
-                <div class="container-fluid principal">
-                    <a class="logo" href="index.html"><img src="assets/GAMER WORLD.jpg" alt="Logo de la Pagina"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
-                        aria-label="Toggle navigation">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                            class="bi bi-list" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                        </svg>
-                    </button>
-                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                        aria-labelledby="offcanvasNavbarLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">GAMER WORLD</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                                <li>
-                                    <a class="nav-link" aria-current="page" href="index.html">Inicio</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Productos
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="pages/ps4.html">PS4</a></li>
-                                        <li><a class="dropdown-item" href="pages/ps5.html">PS5</a></li>
-                                        <li><a class="dropdown-item" href="pages/xbox.html">Xbox</a></li>
-                                    </ul>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        ingresar
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="pages/iniciarSesion.html">Iniciar sesion</a>
-                                        </li>
-                                        <li><a class="dropdown-item" href="pages/crearSesion.html">Crear Usuario</a>
-                                        </li>
-                                    </ul>
-                                <li>
-                                    <a class="nav-link" href="pages/carrito.html"><svg
-                                            xmlns="http://www.w3.org/2000/svg" width="26" height="26"
-                                            fill="currentColor" class="cart" viewBox="0 0 16 16">
-                                            <path
-                                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                                        </svg>Carrito</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
+      <!-- El checkbox controla el menú móvil solo con HTML y CSS. -->
+      <input class="nav-switch" id="site-navigation" type="checkbox">
+      <label class="nav-toggle" for="site-navigation">
+        <span class="nav-toggle__label">Menú</span>
+        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </label>
+      <nav class="primary-nav" aria-label="Navegación principal">
+        <ul class="primary-nav__list">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="pages/ps4.html">PS4</a></li>
+          <li><a href="pages/ps5.html">PS5</a></li>
+          <li><a href="pages/xbox.html">Xbox</a></li>
+          <li><a href="pages/nosotros.html">Nosotros</a></li>
+          <li><a href="pages/iniciarSesion.html">Ingresar</a></li>
+          <li><a class="cart-link" href="pages/carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main class="background-Inicio">
-        <!--El Carrusel-->
-        <div id="carouselExampleCaptions" class="carousel slide">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/Dead Island 2  carousel.jpg" class="d-block w-100"
-                        alt="videojuego Dead Island 2 en el Carrusel">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Nuevo Estreno!!</h5>
-                        <p>Dead Island 2 ya esta disponible.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/Elden-Ring carousel.jpg" class="d-block w-100"
-                        alt="videojuego Elden Ring en el Carrusel">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Una obra de arte disponible!!</h5>
-                        <p>El juego Elden Ring galardonado con 324 premios al juego del año.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/Stray carousel1.jpg" class="d-block w-100" alt="videojuego Stray en el Carrusel">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Estate atento!!</h5>
-                        <p>Ya llega Stray para Ps5.</p>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+  <main id="contenido">
+    <!-- Presentación principal: comunica qué ofrece el sitio antes del catálogo. -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero__media" src="assets/Stray%20carousel1.jpg" width="1350" height="759" alt="Gato protagonista de Stray en una ciudad iluminada con neón" fetchpriority="high">
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="eyebrow">Tu próxima aventura empieza acá</p>
+        <h1 id="hero-title">Tu mundo.<span>Tus reglas.</span></h1>
+        <p class="hero__lead">Descubrí mundos para perderte, historias que quedan y desafíos que piden una partida más.</p>
+        <div class="hero__actions">
+          <a class="button" href="#destacados">Ver destacados</a>
+          <a class="button button--secondary" href="#plataformas">Elegir plataforma</a>
         </div>
-        <!--Los productos-->
-        <h1>Los más vendidos</h1>
-        <section class="cards">
-            <div class="card" style="width: 18rem;">
-                <img class="img" src="assets/Red_dead_redemptionII.jpg"
-                    alt="Videojuegos Red Dead Redemption 2 para la Ps4">
-                <div class="card-body">
-                    <h3>Red dead redemption II</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="heart"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="cart-body"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                    </svg>
-                    <p>Red Dead Redemption 2 es un videojuego de acción y aventura que se desarrolla en el Viejo Oeste.
-                        Controlas a Arthur Morgan, un forajido en una banda liderada por Dutch van der Linde. Deben
-                        sobrevivir en un mundo cambiante mientras son perseguidos por la ley. El juego ofrece una
-                        historia principal emocionante, un vasto mundo abierto para explorar, misiones secundarias y
-                        actividades diversas.</p>
-                    <p class="card-text">
-                        $11.299
-                    </p>
-                </div>
+        <ul class="hero__stats" aria-label="Resumen del catálogo">
+          <li><strong>18</strong><span>aventuras</span></li>
+          <li><strong>3</strong><span>plataformas</span></li>
+          <li><strong>100%</strong><span>proyecto educativo</span></li>
+        </ul>
+      </div>
+    </section>
 
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="img" src="assets/elden-ring_ps5.jpg" alt="Videojuegos Elden Ring para la Ps5">
-                <div class="card-body">
-                    <h3>Elden ring Ps5</h3>
-                    <p class="card-text">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="heart"
-                            viewBox="0 0 16 16">
-                            <path
-                                d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
-                        </svg>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
-                            class="cart-body" viewBox="0 0 16 16">
-                            <path
-                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                        </svg>
-                    <p>Elden Ring es un videojuego de rol de acción ambientado en un mundo de fantasía. Eres el Portador
-                        del Signo y tu misión es recorrer el reino de Erdrea para reunir los fragmentos del Elden Ring,
-                        restaurando así el equilibrio en el mundo. Explora paisajes impresionantes, combate enemigos
-                        desafiantes y desbloquea habilidades especiales en una experiencia llena de acción y magia.</p>
-                    $27.999
-                    </p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="img" src="assets/dead-island-2_ps5.jpg" alt="Videojuegos Dead Island 2 para la Ps5">
-                <div class="card-body">
-                    <h3>Dead Island 2 Ps5</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="heart"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="cart-body"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                    </svg>
-                    <p>Dead Island 2 es un juego de acción y supervivencia en un mundo abierto infestado de zombis.
-                        Ambientado en California, luchas contra hordas de muertos vivientes mientras exploras, completas
-                        misiones y te unes a otros jugadores en línea para sobrevivir. Utiliza armas y habilidades
-                        especiales para enfrentarte a los zombis y a otros supervivientes en un entorno
-                        postapocalíptico.</p>
-                    <p class="card-text">
-                        $39.000
-                    </p>
-                </div>
-            </div>
-            <div class="card" style="width: 18rem;">
-                <img class="img" src="assets/Spiderman_ps4.jpg" alt="Videojuegos Spiderman para la Ps4">
-                <div class="card-body">
-                    <h3>Spiderman Ps4</h3>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="heart"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
-                    </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="cart-body"
-                        viewBox="0 0 16 16">
-                        <path
-                            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
-                    </svg>
-                    <p>Spider-Man (PS4) es un juego de acción y aventura en un mundo abierto. Controlas a Peter Parker,
-                        también conocido como Spider-Man, mientras proteges la ciudad de Nueva York de villanos famosos.
-                        Realiza acrobacias, combate enemigos y disfruta de una emocionante narrativa en un mundo
-                        detallado y realista.</p>
-                    <p class="card-text">
-                        $9.999
-                    </p>
-                </div>
-            </div>
-        </section>
-        <div class="info">
-            <div class="info-Envios">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
-                    class="bi bi-archive-fill" viewBox="0 0 16 16">
-                    <path
-                        d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
-                </svg>
-                <h2>Envío gratis a todo el pais.</h2>
-                <p><span>Descubre nuestros beneficios al registrate.</span> </p>
-            </div>
-            <div class="info-Seguridad">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
-                    class="bi bi-shield-fill-check" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M8 0c-.69 0-1.843.265-2.928.56-1.11.3-2.229.655-2.887.87a1.54 1.54 0 0 0-1.044 1.262c-.596 4.477.787 7.795 2.465 9.99a11.777 11.777 0 0 0 2.517 2.453c.386.273.744.482 1.048.625.28.132.581.24.829.24s.548-.108.829-.24a7.159 7.159 0 0 0 1.048-.625 11.775 11.775 0 0 0 2.517-2.453c1.678-2.195 3.061-5.513 2.465-9.99a1.541 1.541 0 0 0-1.044-1.263 62.467 62.467 0 0 0-2.887-.87C9.843.266 8.69 0 8 0zm2.146 5.146a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647z" />
-                </svg>
-                <h2>Seguridad</h2>
-                <p><span>Nosotros protegemos tus pedidos con una garantia de 1 mes.</span> </p>
-            </div>
-
-            <div class="info-pago">
-                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor"
-                    class="bi bi-credit-card" viewBox="0 0 16 16">
-                    <path
-                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z" />
-                    <path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
-                </svg>
-                <h2>Elegí cómo pagar</h2>
-                <p><span>Podés pagar con tarjeta, débito o credito y te hacemos hasta 12 cuotas sin
-                        interes.</span>
-                </p>
-            </div>
+    <!-- Accesos visuales a cada catálogo. -->
+    <section class="section" id="plataformas" aria-labelledby="platform-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Tres catálogos</p>
+            <h2 id="platform-title">Elegí tu plataforma</h2>
+          </div>
+          <p>Cada sección reúne sus títulos principales con descripciones breves y precios de demostración.</p>
         </div>
-    </main>
 
-    <footer>
-        <div class="pie-pagina">
-            <!--Links a los productos-->
-            <div class="productos">
-                <h2>PRODUCTOS</h2>
-                <ul class="footer-productos-item">
-                    <li><a href="pages/ps4.html">Ps4</a></li>
-                    <li><a href="pages/ps5.html">Ps5</a></li>
-                    <li><a href="pages/xbox.html">Xbox</a></li>
-                </ul>
-            </div>
-            <!--Metodos de pago-->
-            <div class="pago">
-                <h2>MEDIOS DE PAGO</h2>
-                <div>
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/visa@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="visa" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mastercard@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="mastercard" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/amex@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="amex" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/diners@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="diners" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/paypal@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/paypal@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="paypal" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/banelco@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="ar_banelco" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/cabal@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="ar_cabal" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-naranja@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="ar_tarjeta-naranja" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/tarjeta-shopping@2x.png"
-                        class="icon-logo lazyloaded" alt="ar_tarjeta-shopping" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/mercadopago@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="mercadopago" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/argencard@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/ar/argencard@2x.png"
-                        class="icon-logo lazyloaded" alt="ar_argencard" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/pagofacil@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="pagofacil" width="32" height="20">
-                    <img src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
-                        data-src="//d26lpennugtm8s.cloudfront.net/assets/common/img/logos/payment/new_logos_payment/rapipago@2x.png"
-                        class="icon-logo ls-is-cached lazyloaded" alt="rapipago" width="32" height="20">
-                </div>
-            </div>
-            <!--Links de Contacto-->
-            <div class="contactos">
-                <h2>CONTACTANOS</h2>
-                <a href="pages/nosotros.html">Quienes somos?</a>
-                <p>telefono:+5491144211032</p>
-                <p>gmail:gamerworld2004@gmail.com</p>
-
-
-                <ul>
-                    <il>
-                        <a class="instagram" href="https://www.instagram.com/leivacecchi/"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                class="bi bi-instagram" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
-                            </svg></a>
-                    </il>
-                    <il>
-                        <a class="facebook" href="https://www.facebook.com/ezequiel.leivacecchi"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                class="bi bi-facebook" viewBox="0 0 16 16">
-                                <path
-                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-                            </svg></a>
-                    </il>
-                    <il>
-                        <a class="twitter" href="https://twitter.com/LeivaCecchi"><svg
-                                xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                                class="bi bi-twitter" viewBox="0 0 16 16">
-                                <path
-                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
-                            </svg></a>
-                    </il>
-                </ul>
-            </div>
-            <!--Newsletter-->
-            <div class="newsletter">
-                <h2>NEWSLETTER</h2>
-                <div>
-                    <p>Reciba nuestras ofertas y novedades en su casilla de correo:</p>
-                    <ul>
-                        <label for="name">Nombre</label>
-                        <input type="text" class="form-control" id="name" placeholder="Ingresa tu nombre">
-                        <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="*****@mail.com">
-                        <div class="botones">
-                            <button class="bordes">
-                                <span class="boton">Enviar</span>
-                            </button>
-                        </div>
-                    </ul>
-                </div>
-            </div>
+        <div class="platform-grid">
+          <a class="platform-card" href="pages/ps4.html">
+            <img src="assets/platform-ps4.webp" width="1599" height="900" alt="Consola oscura y mando en un espacio gamer con iluminación azul" loading="lazy" decoding="async">
+            <span class="platform-card__index">01 · Catálogo</span>
+            <span class="platform-card__label">PlayStation 4</span>
+            <span class="platform-card__copy">Clásicos modernos y grandes historias</span>
+          </a>
+          <a class="platform-card" href="pages/ps5.html">
+            <img src="assets/platform-ps5.webp" width="1599" height="900" alt="Consola blanca y mando en un espacio gamer con iluminación azul" loading="lazy" decoding="async">
+            <span class="platform-card__index">02 · Nueva generación</span>
+            <span class="platform-card__label">PlayStation 5</span>
+            <span class="platform-card__copy">Velocidad, detalle y mundos inmensos</span>
+          </a>
+          <a class="platform-card" href="pages/xbox.html">
+            <img src="assets/platform-xbox.webp" width="1599" height="900" alt="Consola negra vertical y mando en un espacio gamer con iluminación verde" loading="lazy" decoding="async">
+            <span class="platform-card__index">03 · Potencia</span>
+            <span class="platform-card__label">Xbox</span>
+            <span class="platform-card__copy">Competencia, acción y velocidad</span>
+          </a>
         </div>
-    </footer>
-    <!--scrip de bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
-        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
-        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
-        crossorigin="anonymous"></script>
+      </div>
+    </section>
 
+    <!-- Productos destacados reutilizando las imágenes originales del proyecto. -->
+    <section class="section section--soft" id="destacados" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Selección Gamer World</p>
+            <h2 id="featured-title">Los más buscados</h2>
+          </div>
+          <p>Una muestra del catálogo. Los precios y la disponibilidad son ficticios porque este sitio es educativo.</p>
+        </div>
+
+        <div class="cards">
+          <article class="product-card">
+            <img class="product-card__image" src="assets/Red_dead_redemptionII.jpg" width="1024" height="1024" alt="Portada de Red Dead Redemption 2" loading="lazy" decoding="async">
+            <div class="product-card__body">
+              <span class="product-card__platform">PS4</span>
+              <h3>Red Dead Redemption 2</h3>
+              <p class="product-card__description">Una aventura de mundo abierto ambientada en los últimos años del lejano oeste.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">$11.299</p>
+                <a class="product-card__link" href="pages/ps4.html">Ver catálogo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="assets/elden-ring_ps5.jpg" width="1024" height="1303" alt="Portada de Elden Ring para PlayStation 5" loading="lazy" decoding="async">
+            <div class="product-card__body">
+              <span class="product-card__platform">PS5</span>
+              <h3>Elden Ring</h3>
+              <p class="product-card__description">Rol, exploración y combates exigentes en un enorme mundo de fantasía oscura.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">$27.999</p>
+                <a class="product-card__link" href="pages/ps5.html">Ver catálogo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="assets/dead-island-2_ps5.jpg" width="600" height="747" alt="Portada de Dead Island 2 para PlayStation 5" loading="lazy" decoding="async">
+            <div class="product-card__body">
+              <span class="product-card__platform">PS5</span>
+              <h3>Dead Island 2</h3>
+              <p class="product-card__description">Acción, supervivencia y humor negro en una ciudad invadida por zombis.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">$39.000</p>
+                <a class="product-card__link" href="pages/ps5.html">Ver catálogo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <img class="product-card__image" src="assets/Spiderman_ps4.jpg" width="1080" height="1080" alt="Portada de Marvel's Spider-Man para PlayStation 4" loading="lazy" decoding="async">
+            <div class="product-card__body">
+              <span class="product-card__platform">PS4</span>
+              <h3>Marvel's Spider-Man</h3>
+              <p class="product-card__description">Recorré Nueva York con movimientos ágiles y combates llenos de acción.</p>
+              <div class="product-card__footer">
+                <p class="product-card__price">$9.999</p>
+                <a class="product-card__link" href="pages/ps4.html">Ver catálogo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formas de jugar: reemplazan los bloques técnicos por recomendaciones temáticas. -->
+    <section class="section" aria-labelledby="playstyles-title">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Elegí cómo jugar</p>
+            <h2 id="playstyles-title">¿Qué aventura buscás hoy?</h2>
+          </div>
+          <p>Hay mundos enormes, combates intensos e historias para perderse durante horas.</p>
+        </div>
+
+        <div class="playstyles">
+          <article class="playstyle">
+            <span class="playstyle__icon" aria-hidden="true">✦</span>
+            <h3>Mundos abiertos</h3>
+            <p>Explorá a tu ritmo, descubrí secretos y convertí cada partida en una aventura propia.</p>
+            <p class="playstyle__games">Red Dead Redemption 2 · Elden Ring</p>
+          </article>
+          <article class="playstyle">
+            <span class="playstyle__icon" aria-hidden="true">⚔</span>
+            <h3>Acción sin pausa</h3>
+            <p>Entrá directo al combate con partidas ágiles, desafíos intensos y grandes momentos.</p>
+            <p class="playstyle__games">God of War · Spider-Man</p>
+          </article>
+          <article class="playstyle">
+            <span class="playstyle__icon" aria-hidden="true">◎</span>
+            <h3>Jugá acompañado</h3>
+            <p>Compartí la partida, competí con amigos o armá un equipo para superar cada reto.</p>
+            <p class="playstyle__games">Rocket League · Call of Duty</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pie reducido: evita formularios falsos y recursos de terceros. -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <section class="footer-brand" aria-labelledby="footer-about-title">
+        <h2 class="footer-title" id="footer-about-title">Gamer World</h2>
+        <p>Proyecto educativo de una tienda de videojuegos. La navegación es funcional, pero no se realizan compras reales.</p>
+      </section>
+      <nav aria-labelledby="footer-catalog-title">
+        <h2 class="footer-title" id="footer-catalog-title">Catálogos</h2>
+        <ul class="footer-links">
+          <li><a href="pages/ps4.html">PlayStation 4</a></li>
+          <li><a href="pages/ps5.html">PlayStation 5</a></li>
+          <li><a href="pages/xbox.html">Xbox</a></li>
+        </ul>
+      </nav>
+      <nav aria-labelledby="footer-info-title">
+        <h2 class="footer-title" id="footer-info-title">Información</h2>
+        <ul class="footer-links">
+          <li><a href="pages/nosotros.html">Sobre el proyecto</a></li>
+          <li><a href="mailto:gamerworld2004@gmail.com">Contacto</a></li>
+          <li><a href="pages/iniciarSesion.html">Acceso de demostración</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="footer-note">© 2026 Gamer World · Sitio educativo sin operaciones comerciales reales.</p>
+  </footer>
 </body>
-
 </html>

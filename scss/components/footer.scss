@@ -1,135 +1,82 @@
-/*Footer*/
-footer {
-  display: flex;
-  flex-direction: column;
-  background-color: $nav-y-footer-color;
-  color: #FF5E03;
-  padding: 2% 0px;
+@use "../base/vars" as *;
+@use "../base/utilities" as *;
+
+.site-footer {
+  position: relative;
+  border-top: 1px solid rgb(138 155 204 / 16%);
+  background:
+    radial-gradient(circle at 18% 0%, rgb(139 92 246 / 12%), transparent 25rem),
+    #05060e;
+  color: $color-muted;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, $color-primary, $color-accent, transparent);
+  content: "";
+  opacity: 0.7;
+}
+
+.footer-grid {
+  @include container;
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) repeat(2, minmax(9rem, 1fr));
+  gap: clamp(1.8rem, 5vw, 4rem);
+  padding-block: 4rem 2.5rem;
+}
+
+.footer-brand {
+  max-width: 34rem;
+}
+
+.footer-brand p {
+  max-width: 32rem;
+}
+
+.footer-title {
+  margin-bottom: 0.85rem;
+  color: $color-text;
+  font-size: 0.86rem;
+  font-weight: 900;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.footer-links a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.35rem;
+  color: $color-muted;
+  text-decoration: none;
+  transition: color 180ms ease, transform 180ms ease;
+
+  &::before {
+    color: $color-accent;
+    content: "›";
+  }
+
+  &:hover {
+    color: $color-text;
+    transform: translateX(0.2rem);
+  }
+}
+
+.footer-note {
+  @include container;
+  margin-bottom: 0;
+  padding-block: 1.25rem;
+  border-top: 1px solid rgb(138 155 204 / 12%);
+  font-size: 0.82rem;
   text-align: center;
-  font-weight: bold;
-  bottom: 0;
-  font-family: $font-nav-footer;
-
-  .pie-pagina {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-
-  }
-
-  .pago {
-    font-size: 20px;
-
-    h2 {
-      font-size: 20px;
-    }
-  }
-
-  .productos {
-    h2 {
-      font-size: 20px;
-    }
-  }
-
-  .contactos {
-    a{
-      color: #FF5E03;
-      &:hover{
-          color: aliceblue;
-      }
-  }
-
-    h2 {
-      font-size: 20px;
-    }
-  }
-
-  .newsletter {
-    h2 {
-      font-size: 20px;
-    }
-  }
-
-  .footer-productos-item {
-    flex-direction: column;
-    padding-right: 30%;
-
-    a {
-      text-decoration: none;
-      color: #FF5E03;
-
-      &:hover {
-        color: aliceblue;
-      }
-    }
-  }
-
-  ul {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0vw 1vw;
-    justify-content: center;
-    gap: 20px;
-
-    .instagram {
-      color: fuchsia;
-      width: 20%;
-      height: 20%;
-
-      &:hover {
-        color: aliceblue;
-      }
-
-    }
-
-    .facebook {
-      color: blue;
-      width: 20%;
-      height: 20%;
-
-      &:hover {
-        color: aliceblue;
-      }
-    }
-
-    .twitter {
-      color: #58FAF4;
-      width: 20%;
-      height: 20%;
-
-      &:hover {
-        color: aliceblue;
-      }
-    }
-
-    div {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-
-      .bordes {
-        border: 0;
-        background-image: linear-gradient(45deg, #FF5E03, deeppink, #FF5E03);
-        border-radius: 8px;
-        display: flex;
-        font-size: 18px;
-        padding: 4px;
-        cursor: pointer;
-
-        .boton {
-          padding: 16px 24px;
-          color: aliceblue;
-          background-color: #191919;
-          border-radius: 6px;
-          transition: 1s;
-
-          &:hover {
-            background-image: linear-gradient(45deg, #FF5E03, deeppink, #FF5E03);
-            transform: scale(0.9);
-          }
-        }
-      }
-    }
-
-  }
 }

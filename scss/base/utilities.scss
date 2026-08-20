@@ -1,20 +1,115 @@
-@mixin card($direction, $justify, $wrap, $gap) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    flex-wrap: $wrap;
-    gap: $gap;
+@use "vars" as *;
+
+// Limita el contenido y mantiene un margen seguro incluso en teléfonos chicos.
+@mixin container {
+  width: min(calc(100% - 2rem), $content-width);
+  margin-inline: auto;
 }
 
-@mixin logo($direction, $align, $justify, $height, $margin, $width, $size, $weight, $top) {
-    display: flex;
-    flex-direction: $direction;
-    align-self: $align;
-    justify-content: $justify;
-    height: $height;
-    margin: $margin;
-    width: $width;
-    font-size: $size;
-    font-weight: $weight;
-    top: $top;
+// Superficie translúcida reutilizada por formularios y bloques informativos.
+@mixin panel {
+  border: 1px solid rgb(138 155 204 / 22%);
+  border-radius: $radius-large;
+  background: linear-gradient(145deg, rgb(27 34 64 / 88%), rgb(10 13 27 / 96%));
+  box-shadow: $shadow-card, inset 0 1px 0 rgb(255 255 255 / 5%);
+}
+
+// El foco visible forma parte del diseño y no depende del color por sí solo.
+@mixin focus-ring {
+  outline: 3px solid $color-accent;
+  outline-offset: 4px;
+}
+
+.container {
+  @include container;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.9rem;
+  color: $color-accent;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+
+  &::before {
+    width: 1.8rem;
+    height: 2px;
+    background: linear-gradient(90deg, $color-primary, $color-accent);
+    content: "";
+  }
+}
+
+.button {
+  position: relative;
+  display: inline-flex;
+  min-height: 3.15rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.82rem 1.3rem;
+  border: 1px solid rgb(196 181 253 / 28%);
+  border-radius: 0.95rem;
+  background: linear-gradient(135deg, $color-primary 0%, #6d5dfc 50%, $color-accent 145%);
+  box-shadow: 0 0.85rem 2.25rem rgb(93 63 211 / 30%);
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 25%, rgb(255 255 255 / 18%) 48%, transparent 70%);
+    content: "";
+    transform: translateX(-120%);
+    transition: transform 420ms ease;
+  }
+
+  &:hover {
+    border-color: rgb(255 255 255 / 48%);
+    box-shadow: 0 1rem 2.6rem rgb(93 63 211 / 42%);
+    transform: translateY(-3px);
+  }
+
+  &:hover::before {
+    transform: translateX(120%);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &:disabled {
+    box-shadow: none;
+    cursor: not-allowed;
+    filter: grayscale(0.55);
+    opacity: 0.58;
+    transform: none;
+  }
+}
+
+.button--secondary {
+  border-color: rgb(138 155 204 / 30%);
+  background: rgb(12 15 31 / 76%);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
 }

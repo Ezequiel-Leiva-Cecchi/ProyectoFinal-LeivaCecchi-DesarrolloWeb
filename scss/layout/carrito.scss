@@ -1,47 +1,54 @@
-.background-carrito {
-    background-attachment: x;
-    background-size: cover;
-    padding: 40px 40px;
+@use "../base/vars" as *;
+@use "../base/utilities" as *;
 
-    .carrito {
-        background-color: #191919;
-        .titulo{
-            color: #FF5E03;
-            font-size: 40px;
+.empty-page {
+  @include container;
+  display: grid;
+  place-items: center;
+  min-height: 68vh;
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
 
-            
-        }
-        .cajita-carrito {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            color: #FF5E03;
-            padding: 30px 30px;
-        }
+.empty-state {
+  @include panel;
+  position: relative;
+  width: min(100%, 46rem);
+  padding: clamp(1.5rem, 6vw, 3.5rem);
+  text-align: center;
+  overflow: hidden;
+  animation: card-rise 600ms ease both;
+}
 
-        .bordes {
-            border: 0;
-            background-image: linear-gradient(45deg, #FF5E03, deeppink, #FF5E03);
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            font-size: 18px;
-            padding: 4px;
-            cursor: pointer;
+.empty-state::before {
+  position: absolute;
+  top: 0;
+  right: 18%;
+  left: 18%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $color-primary, $color-accent, transparent);
+  content: "";
+}
 
-            .boton {
-                padding: 16px 24px;
-                color: aliceblue;
-                background-color: #191919;
-                border-radius: 6px;
-                transition: 1s;
+.empty-state__icon {
+  display: grid;
+  width: 4.5rem;
+  aspect-ratio: 1;
+  place-items: center;
+  margin: 0 auto 1.25rem;
+  border-radius: 50%;
+  border: 1px solid rgb(34 211 238 / 24%);
+  background: linear-gradient(145deg, rgb(139 92 246 / 16%), rgb(34 211 238 / 9%));
+  color: #dffbff;
+  font-size: 2rem;
+}
 
-                &:hover {
-                    background-image: linear-gradient(45deg, #FF5E03, deeppink, #FF5E03);
-                    transform: scale(0.9);
-                }
-            }
-        }
-    }
+.empty-state h1 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+}
 
+.empty-state p {
+  max-width: 35rem;
+  margin: 0 auto 1.5rem;
+  color: $color-muted;
 }
