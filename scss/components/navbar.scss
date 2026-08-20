@@ -30,6 +30,7 @@
 
 .header-shell {
   @include container;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,6 +60,49 @@
   font-size: clamp(1.15rem, 3vw, 1.5rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+// El botón solo aparece cuando las reglas responsive convierten la navegación
+// en un panel desplegable.
+.nav-toggle {
+  display: none;
+  align-items: center;
+  min-height: 2.75rem;
+  gap: 0.65rem;
+  padding: 0.55rem 0.8rem;
+  border: 1px solid $color-border;
+  border-radius: 999px;
+  background: $color-surface-soft;
+  color: $color-text;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.nav-toggle__icon {
+  display: grid;
+  width: 1.2rem;
+  gap: 0.22rem;
+}
+
+.nav-toggle__icon span {
+  width: 100%;
+  height: 2px;
+  border-radius: 999px;
+  background: currentcolor;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+// Las tres líneas se convierten en una cruz para comunicar el estado abierto.
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:first-child {
+  transform: translateY(0.44rem) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:last-child {
+  transform: translateY(-0.44rem) rotate(-45deg);
 }
 
 .primary-nav {

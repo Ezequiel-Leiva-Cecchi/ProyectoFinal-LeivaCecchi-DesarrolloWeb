@@ -7,6 +7,7 @@
   <title>Juegos de PS4 | Gamer World</title>
   <link rel="icon" href="../assets/GAMER%20WORLD.jpg" type="image/jpeg">
   <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/navigation.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
@@ -18,7 +19,9 @@
         <img class="brand__logo" src="../assets/GAMER%20WORLD.jpg" width="500" height="500" alt="">
         <span class="brand__name">Gamer World</span>
       </a>
-      <nav class="primary-nav" aria-label="Navegación principal">
+      <!-- Botón accesible que reemplaza el desbordamiento horizontal en móvil. -->
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle__label">Menú</span><span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal" data-navigation>
         <ul class="primary-nav__list">
           <li><a href="../index.html">Inicio</a></li>
           <li><a href="ps4.html" aria-current="page">PS4</a></li>
@@ -35,7 +38,7 @@
   <main id="contenido">
     <!-- Banner de contexto para reconocer la plataforma rápidamente. -->
     <section class="catalog-hero" aria-labelledby="catalog-title">
-      <img src="../assets/ps4-banner.jpg" width="1200" height="300" alt="Consola y mando de PlayStation 4" fetchpriority="high">
+      <img src="../assets/platform-ps4.webp" width="1599" height="900" alt="Consola oscura y mando en un espacio gamer con iluminación azul" fetchpriority="high">
       <div class="catalog-hero__content">
         <p class="eyebrow">Catálogo PlayStation</p>
         <h1 id="catalog-title">Juegos de PS4</h1>

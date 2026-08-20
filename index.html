@@ -7,6 +7,8 @@
   <title>Gamer World | Videojuegos para todos</title>
   <link rel="icon" href="assets/GAMER%20WORLD.jpg" type="image/jpeg">
   <link rel="stylesheet" href="css/style.css">
+  <!-- El script habilita el menú desplegable solo cuando JavaScript está disponible. -->
+  <script src="js/navigation.js" defer></script>
 </head>
 <body>
   <!-- Acceso rápido para personas que navegan con teclado. -->
@@ -20,7 +22,13 @@
         <span class="brand__name">Gamer World</span>
       </a>
 
-      <nav class="primary-nav" aria-label="Navegación principal">
+      <!-- En pantallas angostas este botón abre la navegación sin desbordar el ancho. -->
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span class="nav-toggle__label">Menú</span>
+        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal" data-navigation>
         <ul class="primary-nav__list">
           <li><a href="index.html" aria-current="page">Inicio</a></li>
           <li><a href="pages/ps4.html">PS4</a></li>
@@ -63,15 +71,15 @@
 
         <div class="platform-grid">
           <a class="platform-card" href="pages/ps4.html">
-            <img src="assets/ps4-banner.jpg" width="1200" height="300" alt="Consola y mando de PlayStation 4" loading="lazy" decoding="async">
+            <img src="assets/platform-ps4.webp" width="1599" height="900" alt="Consola oscura y mando en un espacio gamer con iluminación azul" loading="lazy" decoding="async">
             <span class="platform-card__label">PlayStation 4</span>
           </a>
           <a class="platform-card" href="pages/ps5.html">
-            <img src="assets/ps5-banner.jpg" width="1200" height="300" alt="Consola PlayStation 5" loading="lazy" decoding="async">
+            <img src="assets/platform-ps5.webp" width="1599" height="900" alt="Consola blanca y mando en un espacio gamer con iluminación azul" loading="lazy" decoding="async">
             <span class="platform-card__label">PlayStation 5</span>
           </a>
           <a class="platform-card" href="pages/xbox.html">
-            <img src="assets/xbox-series-X-y-X-banner.jpg" width="1024" height="256" alt="Consolas Xbox Series" loading="lazy" decoding="async">
+            <img src="assets/platform-xbox.webp" width="1599" height="900" alt="Consola negra vertical y mando en un espacio gamer con iluminación verde" loading="lazy" decoding="async">
             <span class="platform-card__label">Xbox</span>
           </a>
         </div>
@@ -145,31 +153,35 @@
       </div>
     </section>
 
-    <!-- Beneficios ficticios, presentados sin prometer una compra real. -->
-    <section class="section" aria-labelledby="benefits-title">
+    <!-- Formas de jugar: reemplazan los bloques técnicos por recomendaciones temáticas. -->
+    <section class="section" aria-labelledby="playstyles-title">
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">Una experiencia simple</p>
-            <h2 id="benefits-title">Pensado para jugadores</h2>
+            <p class="eyebrow">Elegí cómo jugar</p>
+            <h2 id="playstyles-title">¿Qué aventura buscás hoy?</h2>
           </div>
+          <p>Hay mundos enormes, combates intensos e historias para perderse durante horas.</p>
         </div>
 
-        <div class="benefits">
-          <article class="benefit">
-            <span class="benefit__number" aria-hidden="true">01</span>
-            <h3>Catálogo claro</h3>
-            <p>Plataformas separadas y fichas fáciles de recorrer desde cualquier dispositivo.</p>
+        <div class="playstyles">
+          <article class="playstyle">
+            <span class="playstyle__icon" aria-hidden="true">✦</span>
+            <h3>Mundos abiertos</h3>
+            <p>Explorá a tu ritmo, descubrí secretos y convertí cada partida en una aventura propia.</p>
+            <p class="playstyle__games">Red Dead Redemption 2 · Elden Ring</p>
           </article>
-          <article class="benefit">
-            <span class="benefit__number" aria-hidden="true">02</span>
-            <h3>Diseño accesible</h3>
-            <p>Buen contraste, foco visible, navegación por teclado e imágenes descriptivas.</p>
+          <article class="playstyle">
+            <span class="playstyle__icon" aria-hidden="true">⚔</span>
+            <h3>Acción sin pausa</h3>
+            <p>Entrá directo al combate con partidas ágiles, desafíos intensos y grandes momentos.</p>
+            <p class="playstyle__games">God of War · Spider-Man</p>
           </article>
-          <article class="benefit">
-            <span class="benefit__number" aria-hidden="true">03</span>
-            <h3>Proyecto transparente</h3>
-            <p>Es una demostración educativa: no procesa pagos ni guarda información personal.</p>
+          <article class="playstyle">
+            <span class="playstyle__icon" aria-hidden="true">◎</span>
+            <h3>Jugá acompañado</h3>
+            <p>Compartí la partida, competí con amigos o armá un equipo para superar cada reto.</p>
+            <p class="playstyle__games">Rocket League · Call of Duty</p>
           </article>
         </div>
       </div>

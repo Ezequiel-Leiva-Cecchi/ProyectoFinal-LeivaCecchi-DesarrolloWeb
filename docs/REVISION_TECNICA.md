@@ -53,7 +53,8 @@ Problemas heredados que se corrigieron:
 
 ## Decisiones de la mejora
 
-1. Conservar la marca Gamer World, las imágenes y los tres catálogos.
+1. Conservar la marca Gamer World y los tres catálogos, reemplazando únicamente
+   los banners borrosos por composiciones originales optimizadas.
 2. Mantener el resultado como un sitio estático que funciona sin servidor.
 3. Reemplazar Bootstrap por CSS propio para reducir dependencias y enseñar con
    claridad qué hace cada estilo.
@@ -63,6 +64,8 @@ Problemas heredados que se corrigieron:
 7. Agregar controles automáticos para HTML, Sass y recursos locales.
 8. No modificar las preentregas históricas: sirven como evidencia de progreso y
    actualizar tres copias del mismo sitio generaría mantenimiento duplicado.
+9. Sustituir el desplazamiento horizontal del encabezado por un menú móvil
+   accesible y convertir las fichas en filas compactas en pantallas angostas.
 
 ## Próximos pasos recomendados
 

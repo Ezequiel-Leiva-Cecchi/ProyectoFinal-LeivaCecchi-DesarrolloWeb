@@ -8,8 +8,10 @@ compras ni almacena datos personales.
 ## Qué se mejoró
 
 - HTML semántico y válido en todas las páginas.
-- Navegación, encabezado y pie consistentes.
-- Diseño responsive para teléfono, tablet y escritorio.
+- Navegación, encabezado y pie consistentes, con menú desplegable en teléfono.
+- Diseño responsive real para teléfono, tablet y escritorio, con tarjetas que
+  cambian de estructura según el espacio disponible.
+- Portadas originales optimizadas en WebP para las tres plataformas.
 - Estados de foco, contraste y textos alternativos accesibles.
 - Formularios identificados claramente como demostraciones sin backend.
 - Sass dividido por responsabilidad y compilado en un único CSS.
@@ -43,6 +45,7 @@ de construcción que deba generar otra carpeta de salida.
 ├── index.html             Página principal
 ├── pages/                 Catálogos y páginas secundarias
 ├── assets/                Imágenes locales del proyecto
+├── js/navigation.js       Comportamiento accesible del menú móvil
 ├── scss/                  Fuente modular de los estilos
 ├── css/style.css          CSS generado para el navegador
 └── .github/workflows/     Validación automática
@@ -50,9 +53,10 @@ de construcción que deba generar otra carpeta de salida.
 
 ## Alcance
 
-Este repositorio demuestra maquetación, diseño responsive y accesibilidad. Un
-carrito real, autenticación y newsletter requieren JavaScript y un backend;
-por seguridad, los formularios actuales no envían ni guardan información.
+Este repositorio demuestra maquetación, diseño responsive, JavaScript
+progresivo y accesibilidad. Un carrito real, autenticación y newsletter
+requieren lógica adicional y, según el caso, un backend; por seguridad, los
+formularios actuales no envían ni guardan información.
 
 La comparación completa de las preentregas y las decisiones tomadas está en
 [`docs/REVISION_TECNICA.md`](docs/REVISION_TECNICA.md).

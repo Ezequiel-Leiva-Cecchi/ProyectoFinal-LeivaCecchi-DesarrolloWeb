@@ -222,34 +222,53 @@
   text-decoration: none;
 }
 
-.benefits {
+// Tarjetas editoriales sobre distintos estilos de juego. Reemplazan la lista
+// numerada anterior por contenido útil y visualmente más cercano a una tienda.
+.playstyles {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
-.benefit {
+.playstyle {
+  position: relative;
   padding: 1.5rem;
   border: 1px solid $color-border;
   border-radius: $radius-medium;
-  background: $color-surface-soft;
+  background:
+    radial-gradient(circle at 100% 0%, rgb(255 106 0 / 16%), transparent 42%),
+    $color-surface-soft;
+  overflow: hidden;
 }
 
-.benefit__number {
-  display: block;
+.playstyle__icon {
+  display: grid;
+  width: 3rem;
+  aspect-ratio: 1;
+  place-items: center;
   margin-bottom: 1rem;
-  color: $color-primary;
-  font-family: $font-display;
-  font-size: 2rem;
+  border: 1px solid rgb(255 106 0 / 48%);
+  border-radius: 0.85rem;
+  background: rgb(8 11 16 / 58%);
+  color: $color-primary-light;
+  font-size: 1.45rem;
 }
 
-.benefit h3 {
+.playstyle h3 {
   margin-bottom: 0.4rem;
 }
 
-.benefit p {
+.playstyle p {
   margin-bottom: 0;
   color: $color-muted;
+}
+
+.playstyle .playstyle__games {
+  margin-top: 1rem;
+  color: $color-primary-light;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
 }
 
 // Encabezado compartido por los tres catálogos.
