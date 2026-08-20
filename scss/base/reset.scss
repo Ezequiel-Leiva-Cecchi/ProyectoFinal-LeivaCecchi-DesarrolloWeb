@@ -8,19 +8,39 @@
 }
 
 html {
+  max-width: 100%;
   color-scheme: dark;
+  // La segunda declaración usa `clip` en navegadores modernos y la primera
+  // conserva un fallback para impedir cualquier desplazamiento horizontal.
+  overflow-x: hidden;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
 body {
-  min-width: 18rem;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   min-height: 100vh;
   margin: 0;
   background: $color-background;
   color: $color-text;
   font-family: $font-body;
   line-height: 1.6;
+  overflow-x: hidden;
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
+}
+
+// Los hijos de grids y flexbox tienen un ancho mínimo implícito. Anularlo
+// evita que textos largos o imágenes grandes ensanchen la página en móvil.
+main,
+header,
+footer,
+section,
+.container {
+  min-width: 0;
+  max-width: 100%;
 }
 
 img,
@@ -30,6 +50,7 @@ svg {
 }
 
 img {
+  max-inline-size: 100%;
   height: auto;
 }
 

@@ -35,13 +35,16 @@ for (const file of htmlFiles) {
 const css = readFileSync("css/style.css", "utf8");
 
 // Estas reglas son las garantías mínimas del diseño móvil: panel desplegable,
-// portadas panorámicas y productos compactos de dos columnas.
+// portadas panorámicas, contenido recortado y tarjetas que nunca ensanchan la
+// ventana del navegador.
 requireText(css, "@media (max-width: 62rem)", "css/style.css");
 requireText(css, ".js .primary-nav[data-open=true]", "css/style.css");
 requireText(css, "aspect-ratio: 16/7", "css/style.css");
+requireText(css, "overflow-x: clip", "css/style.css");
+requireText(css, "position: absolute", "css/style.css");
 requireText(
   css,
-  "grid-template-columns: minmax(7.25rem, 34%) minmax(0, 1fr)",
+  "grid-template-columns: clamp(6.5rem, 30vw, 8rem) minmax(0, 1fr)",
   "css/style.css",
 );
 

@@ -11,12 +11,13 @@ compras ni almacena datos personales.
 - Navegación, encabezado y pie consistentes, con menú desplegable en teléfono.
 - Diseño responsive real para teléfono, tablet y escritorio, con tarjetas que
   cambian de estructura según el espacio disponible.
-- Portadas originales optimizadas en WebP para las tres plataformas.
+- Banners optimizados en WebP y portadas locales de alta resolución para los
+  tres catálogos.
 - Estados de foco, contraste y textos alternativos accesibles.
 - Formularios identificados claramente como demostraciones sin backend.
 - Sass dividido por responsabilidad y compilado en un único CSS.
-- Validación automática de HTML, enlaces, reglas responsive y compilación en
-  GitHub Actions.
+- Validación automática de HTML, enlaces, resolución real de las portadas,
+  reglas responsive y compilación en GitHub Actions.
 - Eliminación de dependencias visuales externas y enlaces internos rotos.
 
 ## Ejecutar el proyecto
@@ -61,3 +62,5 @@ formularios actuales no envían ni guardan información.
 
 La comparación completa de las preentregas y las decisiones tomadas está en
 [`docs/REVISION_TECNICA.md`](docs/REVISION_TECNICA.md).
+Las procedencias de las portadas incorporadas durante la mejora están en
+[`docs/IMAGE_SOURCES.md`](docs/IMAGE_SOURCES.md).

@@ -112,6 +112,27 @@
     min-height: 35rem;
   }
 
+  // En los banners móviles se prioriza la lectura: la imagen se mantiene
+  // recortada dentro del bloque y una capa más oscura evita que el texto se
+  // pierda sobre zonas claras de la fotografía.
+  .catalog-hero {
+    min-height: 28rem;
+  }
+
+  .catalog-hero img {
+    object-position: 68% center;
+  }
+
+  .catalog-hero::after {
+    background:
+      linear-gradient(90deg, rgb(8 11 16 / 96%) 0%, rgb(8 11 16 / 82%) 62%, rgb(8 11 16 / 48%) 100%),
+      linear-gradient(0deg, $color-background 0%, transparent 36%);
+  }
+
+  .catalog-hero__content p:last-child {
+    max-width: 30ch;
+  }
+
   .hero__overlay {
     background:
       linear-gradient(0deg, rgb(8 11 16 / 98%) 0%, rgb(8 11 16 / 62%) 75%),
@@ -159,7 +180,10 @@
   // Esto permite comparar varios juegos sin que una sola tarjeta llene la vista.
   .product-card {
     display: grid;
-    grid-template-columns: minmax(7.25rem, 34%) minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    grid-template-columns: clamp(6.5rem, 30vw, 8rem) minmax(0, 1fr);
+    min-height: 13.5rem;
   }
 
   .product-card__image {
@@ -167,6 +191,7 @@
     height: 100%;
     min-height: 12.75rem;
     aspect-ratio: auto;
+    border-right: 1px solid rgb(91 112 145 / 36%);
     object-position: center;
   }
 
@@ -190,12 +215,19 @@
   }
 
   .product-card__footer {
-    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
     padding-top: 0.65rem;
   }
 
   .product-card__price {
     font-size: 1.05rem;
+  }
+
+  .product-card__link {
+    min-height: 2rem;
+    padding: 0.34rem 0.62rem;
+    font-size: 0.78rem;
   }
 
   // En móvil las recomendaciones se leen como filas compactas y no como tres
@@ -247,7 +279,16 @@
   }
 
   .product-card {
-    grid-template-columns: 6.5rem minmax(0, 1fr);
+    grid-template-columns: clamp(5.75rem, 28vw, 6.5rem) minmax(0, 1fr);
+  }
+
+  .product-card__body {
+    padding: 0.78rem;
+  }
+
+  .product-card__platform {
+    margin-bottom: 0.5rem;
+    font-size: 0.64rem;
   }
 
   .product-card__description {
