@@ -1,11 +1,19 @@
 {
-  "name": "pre-entrega3-leiva-cecchi",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "gamer-world-static",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Tienda ficticia de videojuegos creada como proyecto final de Desarrollo Web.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:css",
+    "build:css": "sass scss/style.scss css/style.css --style=expanded --no-source-map",
+    "watch:css": "sass --watch scss/style.scss:css/style.css --style=expanded --no-source-map",
+    "validate:html": "html-validate \"index.html\" \"pages/**/*.html\"",
+    "validate:links": "node scripts/check-local-links.mjs",
+    "check": "npm run build && npm run validate:html && npm run validate:links",
+    "test": "npm run check"
   },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "devDependencies": {
+    "html-validate": "11.8.0",
+    "sass": "1.103.0"
+  }
 }

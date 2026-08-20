@@ -1,61 +1,73 @@
-/*Inicio de sesion*/
-.formulario {
-  padding: 5% 10%;
-  color: #FF5E03;
+@use "../base/vars" as *;
+@use "../base/utilities" as *;
 
-  .fondo {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border-radius: 5px;
-    background-color: #191919;
-    padding: 2% 5%;
+.form-page {
+  @include container;
+  display: grid;
+  place-items: center;
+  min-height: 70vh;
+  padding-block: clamp(3rem, 8vw, 6rem);
+}
 
-    .ingresar {
-      padding: 15px;
-      border-radius: 5px;
-      border: 1px solid aliceblue;
-    }
+.form-card {
+  @include panel;
+  width: min(100%, 38rem);
+  padding: clamp(1.4rem, 5vw, 2.5rem);
+}
 
-    a {
-      color: #FF5E03;
-      transition: 9ms;
+.form-card h1 {
+  margin-bottom: 0.55rem;
+  font-size: clamp(2rem, 6vw, 3rem);
+  line-height: 1.05;
+}
 
-      &:hover {
-        color: aliceblue;
-      }
-    }
+.form-intro,
+.form-note {
+  color: $color-muted;
+}
 
-    .bordes {
-      border: 0;
-      background-image: linear-gradient(45deg, #FF5E03, deeppink, #FF5E03);
-      border-radius: 8px;
-      display: flex;
-      font-size: 18px;
-      padding: 4px;
-      cursor: pointer;
+.demo-notice {
+  margin-block: 1.25rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgb(255 154 82 / 45%);
+  border-radius: $radius-small;
+  background: rgb(255 106 0 / 9%);
+  color: $color-primary-light;
+  font-size: 0.9rem;
+}
 
-      .boton {
-        padding: 16px 24px;
-        color: aliceblue;
-        background-color: #191919;
-        border-radius: 6px;
-        transition: 2s;
+.field {
+  display: grid;
+  gap: 0.4rem;
+  margin-top: 1rem;
+}
 
-        &:hover {
-          background-image: linear-gradient(45deg, #FF5E03, deeppink, #FF5E03);
-          transform: scale(0.9);
-        }
-      }
-    }
+.field label {
+  font-weight: 800;
+}
 
-    .botones {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 5%;
-      color: #FF5E03;
-    }
+.field input {
+  width: 100%;
+  min-height: 3.1rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid $color-border;
+  border-radius: $radius-small;
+  background: $color-background;
+  color: $color-text;
+
+  &:focus {
+    border-color: $color-primary;
   }
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.form-actions a {
+  color: $color-primary-light;
 }

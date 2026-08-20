@@ -1,15 +1,11 @@
-//import base
-@import 'base/vars.scss';
-@import 'base/utilities.scss';
-@import 'base/reset.scss';
-
-//import components
-@import 'components/navbar.scss';
-@import 'components/footer.scss';
-
-//import layout
-@import 'layout/index.scss';
-@import 'layout/sesion.scss';
-@import 'layout/carrito.scss';
-@import 'layout/nosotros.scss';
-@import 'layout/medias.scss';
+// Los módulos se cargan en orden: base, componentes y diseños de página.
+@use "base/vars";
+@use "base/utilities";
+@use "base/reset";
+@use "components/navbar";
+@use "components/footer";
+@use "layout/index";
+@use "layout/sesion";
+@use "layout/carrito";
+@use "layout/nosotros";
+@use "layout/medias";

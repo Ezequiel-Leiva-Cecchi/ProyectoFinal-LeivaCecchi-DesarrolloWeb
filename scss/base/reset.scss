@@ -1,17 +1,65 @@
-* {
-    padding: 0;
-    margin: 0;
+@use "vars" as *;
+@use "utilities" as *;
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
 }
 
 body {
-    background-color: #191919;
+  min-width: 18rem;
+  min-height: 100vh;
+  margin: 0;
+  background: $color-background;
+  color: $color-text;
+  font-family: $font-body;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+::selection {
+  background: $color-primary;
+  color: #fff;
 }

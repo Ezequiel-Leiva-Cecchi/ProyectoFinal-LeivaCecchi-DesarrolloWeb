@@ -1,57 +1,86 @@
-//Media queries
-@media (max-width: 992px) {
-
-
-  //nav
-  .offcanvas-header {
-    background-color: $nav-y-footer-color;
-
-    .offcanvas-title {
-      color: #FF5E03;
-    }
+@media (max-width: 62rem) {
+  .header-shell {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-block: 0.75rem;
   }
 
-  .offcanvas-body {
-    background-color: #191919;
-  }
-  // main
-  main{
-    .carousel-inner {
-      img {
-        object-fit: cover;
-        padding: 30px 30px;
-      }
- 
-      .carousel-caption {
-        display: flex;
-        flex-wrap: wrap;
-        background-color: #494848;
-        opacity: 70%;
-        padding: 5px 5px;
- 
-      }
-    }
-    .banner{
-      padding: 40px 30px;
-    }
-    .info{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      
-    }
-  }
-  
-  //Footer
-  footer {
-
-    .pie-pagina {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 50px;
-      gap: 30px;
-    }
+  .primary-nav {
+    width: 100%;
   }
 
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .platform-grid,
+  .benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .platform-card {
+    min-height: 13rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 42rem) {
+  .brand__logo {
+    width: 2.6rem;
+  }
+
+  .hero {
+    min-height: 35rem;
+  }
+
+  .hero__overlay {
+    background:
+      linear-gradient(0deg, rgb(8 11 16 / 98%) 0%, rgb(8 11 16 / 62%) 75%),
+      linear-gradient(90deg, rgb(8 11 16 / 60%), transparent);
+  }
+
+  .hero h1,
+  .catalog-hero h1,
+  .page-heading h1 {
+    font-size: clamp(2.7rem, 16vw, 4.5rem);
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cards,
+  .about-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand,
+  .about-card--wide {
+    grid-column: auto;
+  }
+
+  .product-card__image {
+    aspect-ratio: 16 / 13;
+    object-position: center 22%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

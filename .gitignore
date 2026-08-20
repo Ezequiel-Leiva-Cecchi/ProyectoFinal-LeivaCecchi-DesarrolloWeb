@@ -1,0 +1,7 @@
+# Dependencias instaladas localmente por npm.
+node_modules/
+
+# Archivos temporales creados por herramientas y sistemas operativos.
+.cache/
+.DS_Store
+Thumbs.db

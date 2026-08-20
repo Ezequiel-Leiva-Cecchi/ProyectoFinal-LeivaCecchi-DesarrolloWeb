@@ -1,0 +1,34 @@
+name: Calidad del sitio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validar:
+    name: Compilar Sass y validar HTML
+    runs-on: ubuntu-latest
+
+    steps:
+      # Descarga únicamente el contenido del repositorio.
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      # Usa una versión estable de Node y reutiliza la caché de npm.
+      - name: Preparar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      # npm ci instala exactamente las versiones registradas en package-lock.json.
+      - name: Instalar herramientas
+        run: npm ci
+
+      # Comprueba que Sass compile y que todas las páginas tengan HTML válido.
+      - name: Ejecutar controles
+        run: npm run check

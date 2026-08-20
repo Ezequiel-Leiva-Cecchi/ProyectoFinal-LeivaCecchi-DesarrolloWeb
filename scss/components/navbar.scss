@@ -1,52 +1,99 @@
- /*menu principal*/
- nav {
-   font-family: $font-nav-footer;
+@use "../base/vars" as *;
+@use "../base/utilities" as *;
 
-   .navbar {
-     display: grid;
-     grid-template-columns: 1fr;
-     grid-template-rows: 1fr, 1fr;
-     background-color: $nav-y-footer-color;
-     padding: 25px;
+// Permite saltar la navegación repetida al usar teclado o lector de pantalla.
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: $radius-small;
+  background: $color-text;
+  color: $color-background;
+  font-weight: 800;
+  transform: translateY(-160%);
 
-     .logo {
-       @include logo(column, start, start, 60%, 10px, 200px, 24px, bold, 10px);
-     }
+  &:focus {
+    transform: translateY(0);
+  }
+}
 
-     .dropdown-menu {
-       background-color: #FF5E03;
-     
+.site-header {
+  position: sticky;
+  z-index: 20;
+  top: 0;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+  background: rgb(8 11 16 / 92%);
+  backdrop-filter: blur(16px);
+}
 
-       .dropdown-item {
-         color: #FF5E03;
-       }
-     }
+.header-shell {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 5rem;
+  gap: 1.5rem;
+}
 
-     .navbar-toggler {
-       color: #FF5E03;
-     }
+.brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.75rem;
+  color: $color-text;
+  text-decoration: none;
+}
 
-     .nav-link {
-       display: inline;
-       padding: 10px;
-       margin: 10px;
-       font-size: 26px;
-       font-weight: bold;
-       background-position: 50% 100%;
-       background-repeat: no-repeat;
-       background-size: 0% 3px;
-       transition: background-size 0.3s;
-       color: #FF5E03;
-       display: flex;
-       align-items: center;
-       gap: 10px;
-       flex-direction: row-reverse;
+.brand__logo {
+  width: 3rem;
+  aspect-ratio: 1;
+  border: 2px solid $color-primary;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-       &:hover {
-         color: aliceblue;
-         background-image: linear-gradient(white, white);
-         background-size: 100% 3px;
-       }
-     }
-   }
- }
+.brand__name {
+  font-family: $font-display;
+  font-size: clamp(1.15rem, 3vw, 1.5rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.primary-nav {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.primary-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: max-content;
+}
+
+.primary-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.55rem 0.8rem;
+  border-radius: 999px;
+  color: $color-muted;
+  font-size: 0.92rem;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 180ms ease, background-color 180ms ease;
+
+  &:hover,
+  &[aria-current="page"] {
+    background: $color-surface-soft;
+    color: $color-text;
+  }
+}
+
+.primary-nav .cart-link {
+  border: 1px solid rgb(255 106 0 / 55%);
+  color: $color-primary-light;
+}
