@@ -4,6 +4,7 @@
 .page-heading {
   @include container;
   padding-block: clamp(4rem, 10vw, 8rem) 2rem;
+  animation: hero-reveal 600ms ease both;
 }
 
 .page-heading p:last-child {
@@ -22,7 +23,29 @@
 
 .about-card {
   @include panel;
+  position: relative;
   padding: clamp(1.35rem, 4vw, 2.25rem);
+  overflow: hidden;
+  animation: card-rise 600ms ease both;
+}
+
+.about-card:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.about-card:nth-child(3) {
+  animation-delay: 160ms;
+}
+
+.about-card::after {
+  position: absolute;
+  width: 8rem;
+  aspect-ratio: 1;
+  top: -5rem;
+  right: -4rem;
+  border: 1px solid rgb(34 211 238 / 15%);
+  border-radius: 50%;
+  content: "";
 }
 
 .about-card--wide {

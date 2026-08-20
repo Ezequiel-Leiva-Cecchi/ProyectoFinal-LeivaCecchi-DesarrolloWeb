@@ -7,7 +7,6 @@
   <title>Juegos de Xbox | Gamer World</title>
   <link rel="icon" href="../assets/GAMER%20WORLD.jpg" type="image/jpeg">
   <link rel="stylesheet" href="../css/style.css">
-  <script src="../js/navigation.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido principal</a>
@@ -19,19 +18,21 @@
         <img class="brand__logo" src="../assets/GAMER%20WORLD.jpg" width="500" height="500" alt="">
         <span class="brand__name">Gamer World</span>
       </a>
-      <!-- Botón accesible que reemplaza el desbordamiento horizontal en móvil. -->
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation"><span class="nav-toggle__label">Menú</span><span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span></button>
-      <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal" data-navigation>
-        <ul class="primary-nav__list">
-          <li><a href="../index.html">Inicio</a></li>
-          <li><a href="ps4.html">PS4</a></li>
-          <li><a href="ps5.html">PS5</a></li>
-          <li><a href="xbox.html" aria-current="page">Xbox</a></li>
-          <li><a href="nosotros.html">Nosotros</a></li>
-          <li><a href="iniciarSesion.html">Ingresar</a></li>
-          <li><a class="cart-link" href="carrito.html">Carrito</a></li>
-        </ul>
-      </nav>
+      <!-- Menú nativo de HTML: no necesita JavaScript. -->
+      <details class="nav-menu">
+        <summary class="nav-toggle"><span class="nav-toggle__label">Menú</span><span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span></summary>
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <ul class="primary-nav__list">
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="ps4.html">PS4</a></li>
+            <li><a href="ps5.html">PS5</a></li>
+            <li><a href="xbox.html" aria-current="page">Xbox</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="iniciarSesion.html">Ingresar</a></li>
+            <li><a class="cart-link" href="carrito.html">Carrito</a></li>
+          </ul>
+        </nav>
+      </details>
     </div>
   </header>
 

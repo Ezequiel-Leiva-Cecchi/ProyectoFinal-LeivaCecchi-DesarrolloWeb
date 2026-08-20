@@ -7,8 +7,6 @@
   <title>Gamer World | Videojuegos para todos</title>
   <link rel="icon" href="assets/GAMER%20WORLD.jpg" type="image/jpeg">
   <link rel="stylesheet" href="css/style.css">
-  <!-- El script habilita el menú desplegable solo cuando JavaScript está disponible. -->
-  <script src="js/navigation.js" defer></script>
 </head>
 <body>
   <!-- Acceso rápido para personas que navegan con teclado. -->
@@ -22,39 +20,45 @@
         <span class="brand__name">Gamer World</span>
       </a>
 
-      <!-- En pantallas angostas este botón abre la navegación sin desbordar el ancho. -->
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        <span class="nav-toggle__label">Menú</span>
-        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
-      </button>
-
-      <nav class="primary-nav" id="primary-navigation" aria-label="Navegación principal" data-navigation>
-        <ul class="primary-nav__list">
-          <li><a href="index.html" aria-current="page">Inicio</a></li>
-          <li><a href="pages/ps4.html">PS4</a></li>
-          <li><a href="pages/ps5.html">PS5</a></li>
-          <li><a href="pages/xbox.html">Xbox</a></li>
-          <li><a href="pages/nosotros.html">Nosotros</a></li>
-          <li><a href="pages/iniciarSesion.html">Ingresar</a></li>
-          <li><a class="cart-link" href="pages/carrito.html">Carrito</a></li>
-        </ul>
-      </nav>
+      <!-- Details despliega el menú con comportamiento nativo de HTML. -->
+      <details class="nav-menu">
+        <summary class="nav-toggle">
+          <span class="nav-toggle__label">Menú</span>
+          <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+        </summary>
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <ul class="primary-nav__list">
+            <li><a href="index.html" aria-current="page">Inicio</a></li>
+            <li><a href="pages/ps4.html">PS4</a></li>
+            <li><a href="pages/ps5.html">PS5</a></li>
+            <li><a href="pages/xbox.html">Xbox</a></li>
+            <li><a href="pages/nosotros.html">Nosotros</a></li>
+            <li><a href="pages/iniciarSesion.html">Ingresar</a></li>
+            <li><a class="cart-link" href="pages/carrito.html">Carrito</a></li>
+          </ul>
+        </nav>
+      </details>
     </div>
   </header>
 
   <main id="contenido">
     <!-- Presentación principal: comunica qué ofrece el sitio antes del catálogo. -->
     <section class="hero" aria-labelledby="hero-title">
-      <img class="hero__media" src="assets/Dead%20Island%202%20%20carousel.jpg" width="1920" height="1080" alt="Escena promocional del videojuego Dead Island 2" fetchpriority="high">
+      <img class="hero__media" src="assets/Stray%20carousel1.jpg" width="1350" height="759" alt="Gato protagonista de Stray en una ciudad iluminada con neón" fetchpriority="high">
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="hero__content">
         <p class="eyebrow">Tu próxima aventura empieza acá</p>
-        <h1 id="hero-title">Jugá sin límites</h1>
-        <p class="hero__lead">Explorá una selección de videojuegos para PS4, PS5 y Xbox en una experiencia rápida, clara y pensada para cualquier pantalla.</p>
+        <h1 id="hero-title">Tu mundo.<span>Tus reglas.</span></h1>
+        <p class="hero__lead">Descubrí mundos para perderte, historias que quedan y desafíos que piden una partida más.</p>
         <div class="hero__actions">
           <a class="button" href="#destacados">Ver destacados</a>
           <a class="button button--secondary" href="#plataformas">Elegir plataforma</a>
         </div>
+        <ul class="hero__stats" aria-label="Resumen del catálogo">
+          <li><strong>18</strong><span>aventuras</span></li>
+          <li><strong>3</strong><span>plataformas</span></li>
+          <li><strong>100%</strong><span>proyecto educativo</span></li>
+        </ul>
       </div>
     </section>
 
@@ -72,15 +76,21 @@
         <div class="platform-grid">
           <a class="platform-card" href="pages/ps4.html">
             <img src="assets/platform-ps4.webp" width="1599" height="900" alt="Consola oscura y mando en un espacio gamer con iluminación azul" loading="lazy" decoding="async">
+            <span class="platform-card__index">01 · Catálogo</span>
             <span class="platform-card__label">PlayStation 4</span>
+            <span class="platform-card__copy">Clásicos modernos y grandes historias</span>
           </a>
           <a class="platform-card" href="pages/ps5.html">
             <img src="assets/platform-ps5.webp" width="1599" height="900" alt="Consola blanca y mando en un espacio gamer con iluminación azul" loading="lazy" decoding="async">
+            <span class="platform-card__index">02 · Nueva generación</span>
             <span class="platform-card__label">PlayStation 5</span>
+            <span class="platform-card__copy">Velocidad, detalle y mundos inmensos</span>
           </a>
           <a class="platform-card" href="pages/xbox.html">
             <img src="assets/platform-xbox.webp" width="1599" height="900" alt="Consola negra vertical y mando en un espacio gamer con iluminación verde" loading="lazy" decoding="async">
+            <span class="platform-card__index">03 · Potencia</span>
             <span class="platform-card__label">Xbox</span>
+            <span class="platform-card__copy">Competencia, acción y velocidad</span>
           </a>
         </div>
       </div>

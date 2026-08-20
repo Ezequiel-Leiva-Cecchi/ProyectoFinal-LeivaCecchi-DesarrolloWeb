@@ -65,14 +65,17 @@ Problemas heredados que se corrigieron:
 8. No modificar las preentregas históricas: sirven como evidencia de progreso y
    actualizar tres copias del mismo sitio generaría mantenimiento duplicado.
 9. Sustituir el desplazamiento horizontal del encabezado por un menú móvil
-   accesible y convertir las fichas en filas compactas en pantallas angostas.
+   nativo con `details` y `summary`, sin JavaScript.
+10. Convertir las fichas en composiciones cinematográficas que cambian de
+    proporción según el ancho disponible.
 
 ## Próximos pasos recomendados
 
-La funcionalidad debería agregarse en cambios independientes y verificables:
+Las mejoras deberían respetar el alcance de HTML y Sass acordado para el
+proyecto:
 
-1. carrito local con JavaScript y `localStorage`;
-2. catálogo basado en datos para evitar repetir tarjetas en HTML;
-3. búsqueda y filtros accesibles;
-4. pruebas de interacción;
-5. backend solamente si se necesitan usuarios o compras reales.
+1. ampliar el catálogo con nuevas páginas semánticas;
+2. seguir optimizando imágenes y rendimiento;
+3. mejorar las composiciones de formularios y estados vacíos;
+4. sumar pruebas visuales para distintos tamaños de pantalla;
+5. revisar periódicamente contraste, foco visible y navegación por teclado.

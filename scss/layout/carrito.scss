@@ -11,9 +11,22 @@
 
 .empty-state {
   @include panel;
+  position: relative;
   width: min(100%, 46rem);
   padding: clamp(1.5rem, 6vw, 3.5rem);
   text-align: center;
+  overflow: hidden;
+  animation: card-rise 600ms ease both;
+}
+
+.empty-state::before {
+  position: absolute;
+  top: 0;
+  right: 18%;
+  left: 18%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $color-primary, $color-accent, transparent);
+  content: "";
 }
 
 .empty-state__icon {
@@ -23,8 +36,9 @@
   place-items: center;
   margin: 0 auto 1.25rem;
   border-radius: 50%;
-  background: rgb(255 106 0 / 13%);
-  color: $color-primary-light;
+  border: 1px solid rgb(34 211 238 / 24%);
+  background: linear-gradient(145deg, rgb(139 92 246 / 16%), rgb(34 211 238 / 9%));
+  color: #dffbff;
   font-size: 2rem;
 }
 

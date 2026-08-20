@@ -11,8 +11,21 @@
 
 .form-card {
   @include panel;
+  position: relative;
   width: min(100%, 38rem);
   padding: clamp(1.4rem, 5vw, 2.5rem);
+  overflow: hidden;
+  animation: card-rise 600ms ease both;
+}
+
+.form-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, $color-primary, $color-accent, transparent 78%);
+  content: "";
 }
 
 .form-card h1 {
@@ -29,10 +42,10 @@
 .demo-notice {
   margin-block: 1.25rem;
   padding: 0.85rem 1rem;
-  border: 1px solid rgb(255 154 82 / 45%);
+  border: 1px solid rgb(196 181 253 / 38%);
   border-radius: $radius-small;
-  background: rgb(255 106 0 / 9%);
-  color: $color-primary-light;
+  background: rgb(139 92 246 / 10%);
+  color: #ddd6fe;
   font-size: 0.9rem;
 }
 
@@ -52,11 +65,12 @@
   padding: 0.75rem 0.9rem;
   border: 1px solid $color-border;
   border-radius: $radius-small;
-  background: $color-background;
+  background: rgb(6 7 17 / 76%);
   color: $color-text;
 
   &:focus {
-    border-color: $color-primary;
+    border-color: $color-accent;
+    box-shadow: 0 0 0 3px rgb(34 211 238 / 9%);
   }
 }
 

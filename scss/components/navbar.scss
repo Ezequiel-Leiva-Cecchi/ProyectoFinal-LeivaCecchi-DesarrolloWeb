@@ -1,7 +1,6 @@
 @use "../base/vars" as *;
 @use "../base/utilities" as *;
 
-// Permite saltar la navegación repetida al usar teclado o lector de pantalla.
 .skip-link {
   position: fixed;
   z-index: 100;
@@ -11,7 +10,7 @@
   border-radius: $radius-small;
   background: $color-text;
   color: $color-background;
-  font-weight: 800;
+  font-weight: 900;
   transform: translateY(-160%);
 
   &:focus {
@@ -21,28 +20,30 @@
 
 .site-header {
   position: sticky;
-  z-index: 20;
+  z-index: 30;
   top: 0;
-  border-bottom: 1px solid rgb(255 255 255 / 8%);
-  background: rgb(8 11 16 / 92%);
-  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgb(138 155 204 / 14%);
+  background: rgb(6 7 17 / 82%);
+  box-shadow: 0 0.6rem 2rem rgb(0 0 0 / 16%);
+  backdrop-filter: blur(20px) saturate(140%);
 }
 
 .header-shell {
   @include container;
   position: relative;
   display: flex;
+  min-height: 5rem;
   align-items: center;
   justify-content: space-between;
-  min-height: 5rem;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .brand {
   display: inline-flex;
-  flex: 0 0 auto;
+  min-width: 0;
+  flex: 0 1 auto;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.8rem;
   color: $color-text;
   text-decoration: none;
 }
@@ -50,94 +51,136 @@
 .brand__logo {
   width: 3rem;
   aspect-ratio: 1;
-  border: 2px solid $color-primary;
-  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 0.9rem;
+  box-shadow:
+    0 0 0 3px rgb(139 92 246 / 12%),
+    0 0.7rem 1.8rem rgb(139 92 246 / 28%);
   object-fit: cover;
+  transform: rotate(-3deg);
+  transition: box-shadow 180ms ease, transform 180ms ease;
+}
+
+.brand:hover .brand__logo {
+  box-shadow:
+    0 0 0 3px rgb(34 211 238 / 18%),
+    0 0.9rem 2rem rgb(34 211 238 / 24%);
+  transform: rotate(0) scale(1.04);
 }
 
 .brand__name {
+  min-width: 0;
   font-family: $font-display;
-  font-size: clamp(1.15rem, 3vw, 1.5rem);
-  letter-spacing: 0.06em;
+  font-size: clamp(1rem, 2.3vw, 1.3rem);
+  font-weight: 900;
+  letter-spacing: 0.055em;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
-// El botón solo aparece cuando las reglas responsive convierten la navegación
-// en un panel desplegable.
+// Details ofrece un menú desplegable nativo: interacción HTML, sin JavaScript.
+.nav-menu {
+  min-width: 0;
+  margin-left: auto;
+}
+
 .nav-toggle {
   display: none;
+  min-height: 2.85rem;
   align-items: center;
-  min-height: 2.75rem;
   gap: 0.65rem;
-  padding: 0.55rem 0.8rem;
-  border: 1px solid $color-border;
-  border-radius: 999px;
-  background: $color-surface-soft;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgb(138 155 204 / 26%);
+  border-radius: 0.9rem;
+  background: rgb(21 26 48 / 82%);
   color: $color-text;
-  font-weight: 800;
+  font-weight: 850;
   cursor: pointer;
+  user-select: none;
 }
 
 .nav-toggle__icon {
   display: grid;
   width: 1.2rem;
-  gap: 0.22rem;
+  gap: 0.23rem;
 }
 
 .nav-toggle__icon span {
   width: 100%;
   height: 2px;
   border-radius: 999px;
-  background: currentcolor;
-  transition: transform 180ms ease, opacity 180ms ease;
+  background: linear-gradient(90deg, $color-primary-light, $color-accent);
+  transition: opacity 180ms ease, transform 180ms ease;
 }
 
-// Las tres líneas se convierten en una cruz para comunicar el estado abierto.
-.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:first-child {
-  transform: translateY(0.44rem) rotate(45deg);
+.nav-menu[open] .nav-toggle__icon span:first-child {
+  transform: translateY(0.46rem) rotate(45deg);
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:nth-child(2) {
+.nav-menu[open] .nav-toggle__icon span:nth-child(2) {
   opacity: 0;
 }
 
-.nav-toggle[aria-expanded="true"] .nav-toggle__icon span:last-child {
-  transform: translateY(-0.44rem) rotate(-45deg);
+.nav-menu[open] .nav-toggle__icon span:last-child {
+  transform: translateY(-0.46rem) rotate(-45deg);
 }
 
-.primary-nav {
-  overflow-x: auto;
-  scrollbar-width: thin;
+.nav-menu > .primary-nav {
+  display: block;
 }
 
 .primary-nav__list {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
-  width: max-content;
+  gap: 0.2rem;
 }
 
 .primary-nav a {
+  position: relative;
   display: inline-flex;
+  min-height: 2.65rem;
   align-items: center;
-  min-height: 2.75rem;
-  padding: 0.55rem 0.8rem;
-  border-radius: 999px;
+  padding: 0.52rem 0.72rem;
+  border-radius: 0.7rem;
   color: $color-muted;
-  font-size: 0.92rem;
-  font-weight: 750;
+  font-size: 0.87rem;
+  font-weight: 780;
   text-decoration: none;
   white-space: nowrap;
-  transition: color 180ms ease, background-color 180ms ease;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+
+  &::after {
+    position: absolute;
+    right: 0.72rem;
+    bottom: 0.25rem;
+    left: 0.72rem;
+    height: 2px;
+    border-radius: 99px;
+    background: linear-gradient(90deg, $color-primary, $color-accent);
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+  }
 
   &:hover,
   &[aria-current="page"] {
-    background: $color-surface-soft;
+    background: rgb(139 92 246 / 10%);
     color: $color-text;
+    transform: translateY(-1px);
+  }
+
+  &:hover::after,
+  &[aria-current="page"]::after {
+    transform: scaleX(1);
   }
 }
 
 .primary-nav .cart-link {
-  border: 1px solid rgb(255 106 0 / 55%);
-  color: $color-primary-light;
+  margin-left: 0.3rem;
+  border: 1px solid rgb(34 211 238 / 28%);
+  background: rgb(34 211 238 / 7%);
+  color: #b8f5ff;
 }

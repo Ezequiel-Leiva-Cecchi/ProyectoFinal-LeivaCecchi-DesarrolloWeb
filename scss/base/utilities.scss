@@ -1,23 +1,23 @@
 @use "vars" as *;
 
-// Limita el contenido y mantiene un margen cómodo en pantallas pequeñas.
+// Limita el contenido y mantiene un margen seguro incluso en teléfonos chicos.
 @mixin container {
-  width: min(100% - 2rem, $content-width);
+  width: min(calc(100% - 2rem), $content-width);
   margin-inline: auto;
 }
 
-// Superficie reutilizable para tarjetas, formularios y estados vacíos.
+// Superficie translúcida reutilizada por formularios y bloques informativos.
 @mixin panel {
-  background: linear-gradient(145deg, $color-surface-soft, $color-surface);
-  border: 1px solid $color-border;
+  border: 1px solid rgb(138 155 204 / 22%);
   border-radius: $radius-large;
-  box-shadow: $shadow-card;
+  background: linear-gradient(145deg, rgb(27 34 64 / 88%), rgb(10 13 27 / 96%));
+  box-shadow: $shadow-card, inset 0 1px 0 rgb(255 255 255 / 5%);
 }
 
-// El foco debe ser visible para quienes navegan con teclado.
+// El foco visible forma parte del diseño y no depende del color por sí solo.
 @mixin focus-ring {
-  outline: 3px solid $color-primary-light;
-  outline-offset: 3px;
+  outline: 3px solid $color-accent;
+  outline-offset: 4px;
 }
 
 .container {
@@ -30,39 +30,68 @@
   height: 1px;
   padding: 0;
   margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
   border: 0;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .eyebrow {
-  margin: 0 0 0.75rem;
-  color: $color-primary-light;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.9rem;
+  color: $color-accent;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.17em;
   text-transform: uppercase;
+
+  &::before {
+    width: 1.8rem;
+    height: 2px;
+    background: linear-gradient(90deg, $color-primary, $color-accent);
+    content: "";
+  }
 }
 
 .button {
+  position: relative;
   display: inline-flex;
+  min-height: 3.15rem;
   align-items: center;
   justify-content: center;
-  min-height: 2.9rem;
-  padding: 0.75rem 1.15rem;
-  border: 1px solid transparent;
-  border-radius: 999px;
-  background: linear-gradient(135deg, $color-primary, $color-accent);
+  gap: 0.55rem;
+  padding: 0.82rem 1.3rem;
+  border: 1px solid rgb(196 181 253 / 28%);
+  border-radius: 0.95rem;
+  background: linear-gradient(135deg, $color-primary 0%, #6d5dfc 50%, $color-accent 145%);
+  box-shadow: 0 0.85rem 2.25rem rgb(93 63 211 / 30%);
   color: #fff;
-  font-weight: 800;
+  font-weight: 900;
+  letter-spacing: -0.01em;
   text-decoration: none;
+  overflow: hidden;
   cursor: pointer;
-  transition: transform 180ms ease, filter 180ms ease;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(105deg, transparent 25%, rgb(255 255 255 / 18%) 48%, transparent 70%);
+    content: "";
+    transform: translateX(-120%);
+    transition: transform 420ms ease;
+  }
 
   &:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
+    border-color: rgb(255 255 255 / 48%);
+    box-shadow: 0 1rem 2.6rem rgb(93 63 211 / 42%);
+    transform: translateY(-3px);
+  }
+
+  &:hover::before {
+    transform: translateX(120%);
   }
 
   &:focus-visible {
@@ -70,14 +99,17 @@
   }
 
   &:disabled {
+    box-shadow: none;
     cursor: not-allowed;
     filter: grayscale(0.55);
-    opacity: 0.62;
+    opacity: 0.58;
     transform: none;
   }
 }
 
 .button--secondary {
-  border-color: $color-border;
-  background: rgb(8 11 16 / 78%);
+  border-color: rgb(138 155 204 / 30%);
+  background: rgb(12 15 31 / 76%);
+  box-shadow: none;
+  backdrop-filter: blur(12px);
 }

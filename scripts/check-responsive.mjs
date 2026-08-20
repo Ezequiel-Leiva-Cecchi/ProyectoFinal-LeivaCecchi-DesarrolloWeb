@@ -1,7 +1,5 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 
-// La lista explícita evita que una página quede fuera de la comprobación por un
-// cambio accidental en un patrón de búsqueda.
 const htmlFiles = [
   "index.html",
   "pages/carrito.html",
@@ -13,8 +11,6 @@ const htmlFiles = [
   "pages/xbox.html",
 ];
 
-// Registra todos los problemas y los informa juntos para acelerar la corrección
-// tanto en la computadora local como dentro de GitHub Actions.
 const errors = [];
 const requireText = (content, expected, context) => {
   if (!content.includes(expected)) errors.push(`${context}: falta ${expected}`);
@@ -23,41 +19,35 @@ const requireText = (content, expected, context) => {
 for (const file of htmlFiles) {
   const html = readFileSync(file, "utf8");
 
-  // Cada página debe cargar el comportamiento y conectar el botón con el mismo
-  // identificador de navegación mediante atributos accesibles.
-  requireText(html, "navigation.js", file);
-  requireText(html, 'class="nav-toggle"', file);
-  requireText(html, 'aria-controls="primary-navigation"', file);
-  requireText(html, 'id="primary-navigation"', file);
-  requireText(html, "data-navigation", file);
+  // El menú usa únicamente elementos nativos. Details y summary ofrecen la
+  // apertura/cierre sin descargar ni ejecutar código en el navegador.
+  requireText(html, '<details class="nav-menu">', file);
+  requireText(html, '<summary class="nav-toggle">', file);
+  requireText(html, '<nav class="primary-nav"', file);
+
+  if (/<script\b/i.test(html)) {
+    errors.push(`${file}: no debe cargar JavaScript`);
+  }
+}
+
+if (existsSync("js/navigation.js")) {
+  errors.push("js/navigation.js: el sitio debe funcionar solo con HTML y CSS");
 }
 
 const css = readFileSync("css/style.css", "utf8");
 
-// Estas reglas son las garantías mínimas del diseño móvil: panel desplegable,
-// portadas panorámicas, contenido recortado y tarjetas que nunca ensanchan la
-// ventana del navegador.
-requireText(css, "@media (max-width: 62rem)", "css/style.css");
-requireText(css, ".js .primary-nav[data-open=true]", "css/style.css");
-requireText(css, "aspect-ratio: 16/7", "css/style.css");
+// Estas señales garantizan un menú CSS, tarjetas contenidas, animaciones y una
+// alternativa sin movimiento para quien la haya configurado en su sistema.
+requireText(css, "@media (max-width: 68rem)", "css/style.css");
+requireText(css, ".nav-menu[open] > .primary-nav", "css/style.css");
 requireText(css, "overflow-x: clip", "css/style.css");
-requireText(css, "position: absolute", "css/style.css");
-requireText(
-  css,
-  "grid-template-columns: clamp(6.5rem, 30vw, 8rem) minmax(0, 1fr)",
-  "css/style.css",
-);
-
-// El script debe actualizar tanto la interfaz visual como aria-expanded; así el
-// menú funciona para mouse, teclado y lectores de pantalla.
-const navigationScript = readFileSync("js/navigation.js", "utf8");
-requireText(navigationScript, 'setAttribute("aria-expanded"', "js/navigation.js");
-requireText(navigationScript, "navigation.dataset.open", "js/navigation.js");
-requireText(navigationScript, 'event.key === "Escape"', "js/navigation.js");
+requireText(css, "aspect-ratio: 16/10", "css/style.css");
+requireText(css, "@keyframes card-rise", "css/style.css");
+requireText(css, "@media (prefers-reduced-motion: reduce)", "css/style.css");
 
 if (errors.length > 0) {
   console.error("Falló la revisión responsive:\n- " + errors.join("\n- "));
   process.exit(1);
 }
 
-console.log(`Responsive verificado en ${htmlFiles.length} páginas.`);
+console.log(`Responsive sin JavaScript verificado en ${htmlFiles.length} páginas.`);
