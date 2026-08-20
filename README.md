@@ -32,6 +32,10 @@ Mientras editás Sass, podés recompilar automáticamente con:
 npm run watch:css
 ```
 
+Vercel sirve directamente los archivos estáticos del repositorio. El archivo
+`vercel.json` evita que la plataforma confunda el control de Sass con un paso
+de construcción que deba generar otra carpeta de salida.
+
 ## Estructura
 
 ```text
