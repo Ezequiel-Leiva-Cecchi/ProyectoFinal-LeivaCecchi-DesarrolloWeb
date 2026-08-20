@@ -6,6 +6,13 @@
   <meta name="description" content="Pantalla educativa de acceso de Gamer World. El formulario es una demostración y no envía datos.">
   <title>Ingresar | Gamer World</title>
   <link rel="icon" href="../assets/GAMER%20WORLD.jpg" type="image/jpeg">
+  <style>
+    /* Esta base mínima evita mostrar HTML sin diseño mientras carga la hoja completa. */
+    html { background: #060711; color-scheme: dark; }
+    body { margin: 0; background: #060711; color: #f8f9ff; opacity: 0; animation: page-ready 180ms 120ms ease-out forwards; }
+    @keyframes page-ready { to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { body { animation-delay: 0ms; animation-duration: 0.01ms; } }
+  </style>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>

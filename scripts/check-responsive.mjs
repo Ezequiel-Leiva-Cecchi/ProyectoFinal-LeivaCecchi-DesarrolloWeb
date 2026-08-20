@@ -24,6 +24,7 @@ for (const file of htmlFiles) {
   requireText(html, '<input class="nav-switch"', file);
   requireText(html, '<label class="nav-toggle"', file);
   requireText(html, '<nav class="primary-nav"', file);
+  requireText(html, "@keyframes page-ready", file);
 
   if (/<script\b/i.test(html)) {
     errors.push(`${file}: no debe cargar JavaScript`);

@@ -6,6 +6,13 @@
   <meta name="description" content="Estado demostrativo del carrito de Gamer World. El proyecto todavía no procesa compras reales.">
   <title>Carrito de demostración | Gamer World</title>
   <link rel="icon" href="../assets/GAMER%20WORLD.jpg" type="image/jpeg">
+  <style>
+    /* Esta base mínima evita mostrar HTML sin diseño mientras carga la hoja completa. */
+    html { background: #060711; color-scheme: dark; }
+    body { margin: 0; background: #060711; color: #f8f9ff; opacity: 0; animation: page-ready 180ms 120ms ease-out forwards; }
+    @keyframes page-ready { to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { body { animation-delay: 0ms; animation-duration: 0.01ms; } }
+  </style>
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -42,7 +49,12 @@
       <p class="eyebrow">Carrito de muestra</p>
       <h1 id="cart-title">Todavía está vacío</h1>
       <p>Esta versión se concentra en HTML, Sass, diseño responsive y accesibilidad. El carrito se presenta como una maqueta visual y no guarda compras ni datos.</p>
-      <a class="button" href="../index.html#plataformas">Volver a los catálogos</a>
+      <!-- Enlaces directos: funcionan tanto alojados normalmente como dentro de HTMLPreview. -->
+      <nav class="empty-state__actions" aria-label="Catálogos disponibles">
+        <a class="button button--secondary" href="ps4.html">Explorar PS4</a>
+        <a class="button" href="ps5.html">Explorar PS5</a>
+        <a class="button button--secondary" href="xbox.html">Explorar Xbox</a>
+      </nav>
     </section>
   </main>
 

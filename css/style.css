@@ -1223,6 +1223,17 @@ main > .section:not(.section--soft) .cards {
   color: #aab2ca;
 }
 
+.empty-state__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.empty-state__actions .button {
+  flex: 1 1 9rem;
+}
+
 .page-heading {
   width: min(100% - 2rem, 1180px);
   margin-inline: auto;

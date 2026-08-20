@@ -51,7 +51,14 @@ for (const [sourceFile, html] of htmlCache) {
   for (const match of html.matchAll(/\s(?:href|src)="([^"]+)"/g)) {
     const reference = match[1];
 
-    if (!reference || ignoredProtocols.test(reference)) {
+    // Un href vacío o igual a # aparenta ser interactivo, pero no lleva a un
+    // destino útil. Se informa antes de ignorar protocolos externos válidos.
+    if (!reference || reference === "#") {
+      problems.push(`${relative(projectRoot, sourceFile)}: enlace sin destino útil`);
+      continue;
+    }
+
+    if (ignoredProtocols.test(reference)) {
       continue;
     }
 
