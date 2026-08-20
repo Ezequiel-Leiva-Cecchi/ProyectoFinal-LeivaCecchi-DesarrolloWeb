@@ -8,8 +8,8 @@ compras ni almacena datos personales.
 ## Qué se mejoró
 
 - HTML semántico y válido en todas las páginas.
-- Navegación, encabezado y pie consistentes, con menú móvil nativo mediante
-  `details` y `summary`, sin JavaScript.
+- Navegación, encabezado y pie consistentes, con menú móvil controlado mediante
+  un checkbox accesible y CSS, sin JavaScript.
 - Diseño responsive real para teléfono, tablet y escritorio, con cards
   cinematográficas que cambian de proporción según el espacio disponible.
 - Animaciones y microinteracciones hechas únicamente con CSS, respetando la
@@ -58,8 +58,8 @@ de construcción que deba generar otra carpeta de salida.
 ## Alcance
 
 Este repositorio demuestra HTML semántico, Sass, animaciones CSS, diseño
-responsive y accesibilidad. El sitio no carga JavaScript: el menú usa elementos
-nativos y los formularios actuales no envían ni guardan información.
+responsive y accesibilidad. El sitio no carga JavaScript: el menú se despliega
+con HTML y CSS, y los formularios actuales no envían ni guardan información.
 
 La comparación completa de las preentregas y las decisiones tomadas está en
 [`docs/REVISION_TECNICA.md`](docs/REVISION_TECNICA.md).

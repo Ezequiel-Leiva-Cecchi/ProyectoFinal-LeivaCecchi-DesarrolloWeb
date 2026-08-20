@@ -73,8 +73,7 @@ a {
 }
 
 button,
-input,
-summary {
+input {
   font: inherit;
 }
 
@@ -89,14 +88,6 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-summary {
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
 }
 
 :focus-visible {

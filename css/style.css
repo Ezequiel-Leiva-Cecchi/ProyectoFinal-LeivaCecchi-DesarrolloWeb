@@ -155,8 +155,7 @@ a {
 }
 
 button,
-input,
-summary {
+input {
   font: inherit;
 }
 
@@ -171,14 +170,6 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-summary {
-  list-style: none;
-}
-
-summary::-webkit-details-marker {
-  display: none;
 }
 
 :focus-visible {
@@ -266,9 +257,16 @@ summary::-webkit-details-marker {
   white-space: nowrap;
 }
 
-.nav-menu {
-  min-width: 0;
-  margin-left: auto;
+.nav-switch {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .nav-toggle {
@@ -286,6 +284,11 @@ summary::-webkit-details-marker {
   user-select: none;
 }
 
+.nav-switch:focus-visible + .nav-toggle {
+  outline: 3px solid #22d3ee;
+  outline-offset: 4px;
+}
+
 .nav-toggle__icon {
   display: grid;
   width: 1.2rem;
@@ -300,19 +303,21 @@ summary::-webkit-details-marker {
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
-.nav-menu[open] .nav-toggle__icon span:first-child {
+.nav-switch:checked + .nav-toggle .nav-toggle__icon span:first-child {
   transform: translateY(0.46rem) rotate(45deg);
 }
 
-.nav-menu[open] .nav-toggle__icon span:nth-child(2) {
+.nav-switch:checked + .nav-toggle .nav-toggle__icon span:nth-child(2) {
   opacity: 0;
 }
 
-.nav-menu[open] .nav-toggle__icon span:last-child {
+.nav-switch:checked + .nav-toggle .nav-toggle__icon span:last-child {
   transform: translateY(-0.46rem) rotate(-45deg);
 }
 
-.nav-menu > .primary-nav {
+.primary-nav {
+  min-width: 0;
+  margin-left: auto;
   display: block;
 }
 
@@ -365,6 +370,11 @@ summary::-webkit-details-marker {
   color: #b8f5ff;
 }
 
+@media (min-width: 68.0625rem) {
+  .nav-switch {
+    display: none;
+  }
+}
 .site-footer {
   position: relative;
   border-top: 1px solid rgba(138, 155, 204, 0.16);
@@ -1300,7 +1310,7 @@ main > .section:not(.section--soft) .cards {
   .nav-toggle {
     display: inline-flex;
   }
-  .nav-menu > .primary-nav {
+  .primary-nav {
     position: absolute;
     top: calc(100% + 0.55rem);
     right: 0;
@@ -1313,7 +1323,7 @@ main > .section:not(.section--soft) .cards {
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(20px);
   }
-  .nav-menu[open] > .primary-nav {
+  .nav-switch:checked ~ .primary-nav {
     display: block;
     animation: hero-reveal 180ms ease both;
   }

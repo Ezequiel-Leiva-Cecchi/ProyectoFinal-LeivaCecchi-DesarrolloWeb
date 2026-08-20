@@ -5,7 +5,7 @@
     display: inline-flex;
   }
 
-  .nav-menu > .primary-nav {
+  .primary-nav {
     position: absolute;
     top: calc(100% + 0.55rem);
     right: 0;
@@ -19,7 +19,7 @@
     backdrop-filter: blur(20px);
   }
 
-  .nav-menu[open] > .primary-nav {
+  .nav-switch:checked ~ .primary-nav {
     display: block;
     animation: hero-reveal 180ms ease both;
   }

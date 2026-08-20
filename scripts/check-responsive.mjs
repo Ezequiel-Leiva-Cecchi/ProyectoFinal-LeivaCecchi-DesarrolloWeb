@@ -19,10 +19,10 @@ const requireText = (content, expected, context) => {
 for (const file of htmlFiles) {
   const html = readFileSync(file, "utf8");
 
-  // El menú usa únicamente elementos nativos. Details y summary ofrecen la
-  // apertura/cierre sin descargar ni ejecutar código en el navegador.
-  requireText(html, '<details class="nav-menu">', file);
-  requireText(html, '<summary class="nav-toggle">', file);
+  // El checkbox y su etiqueta ofrecen la apertura/cierre sin descargar ni
+  // ejecutar código en el navegador.
+  requireText(html, '<input class="nav-switch"', file);
+  requireText(html, '<label class="nav-toggle"', file);
   requireText(html, '<nav class="primary-nav"', file);
 
   if (/<script\b/i.test(html)) {
@@ -39,7 +39,7 @@ const css = readFileSync("css/style.css", "utf8");
 // Estas señales garantizan un menú CSS, tarjetas contenidas, animaciones y una
 // alternativa sin movimiento para quien la haya configurado en su sistema.
 requireText(css, "@media (max-width: 68rem)", "css/style.css");
-requireText(css, ".nav-menu[open] > .primary-nav", "css/style.css");
+requireText(css, ".nav-switch:checked ~ .primary-nav", "css/style.css");
 requireText(css, "overflow-x: clip", "css/style.css");
 requireText(css, "aspect-ratio: 16/10", "css/style.css");
 requireText(css, "@keyframes card-rise", "css/style.css");

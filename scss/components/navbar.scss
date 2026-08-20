@@ -80,10 +80,18 @@
   white-space: nowrap;
 }
 
-// Details ofrece un menú desplegable nativo: interacción HTML, sin JavaScript.
-.nav-menu {
-  min-width: 0;
-  margin-left: auto;
+// El checkbox queda disponible para teclado, pero visualmente lo representa
+// su etiqueta. Así el menú móvil funciona con HTML y CSS, sin JavaScript.
+.nav-switch {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .nav-toggle {
@@ -101,6 +109,10 @@
   user-select: none;
 }
 
+.nav-switch:focus-visible + .nav-toggle {
+  @include focus-ring;
+}
+
 .nav-toggle__icon {
   display: grid;
   width: 1.2rem;
@@ -115,19 +127,21 @@
   transition: opacity 180ms ease, transform 180ms ease;
 }
 
-.nav-menu[open] .nav-toggle__icon span:first-child {
+.nav-switch:checked + .nav-toggle .nav-toggle__icon span:first-child {
   transform: translateY(0.46rem) rotate(45deg);
 }
 
-.nav-menu[open] .nav-toggle__icon span:nth-child(2) {
+.nav-switch:checked + .nav-toggle .nav-toggle__icon span:nth-child(2) {
   opacity: 0;
 }
 
-.nav-menu[open] .nav-toggle__icon span:last-child {
+.nav-switch:checked + .nav-toggle .nav-toggle__icon span:last-child {
   transform: translateY(-0.46rem) rotate(-45deg);
 }
 
-.nav-menu > .primary-nav {
+.primary-nav {
+  min-width: 0;
+  margin-left: auto;
   display: block;
 }
 
@@ -183,4 +197,12 @@
   border: 1px solid rgb(34 211 238 / 28%);
   background: rgb(34 211 238 / 7%);
   color: #b8f5ff;
+}
+
+// En escritorio los enlaces siempre están visibles, por eso el control móvil
+// sale también del orden de tabulación.
+@media (min-width: 68.0625rem) {
+  .nav-switch {
+    display: none;
+  }
 }

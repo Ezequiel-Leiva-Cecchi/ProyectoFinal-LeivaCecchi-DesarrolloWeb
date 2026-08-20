@@ -20,24 +20,23 @@
         <span class="brand__name">Gamer World</span>
       </a>
 
-      <!-- Details despliega el menú con comportamiento nativo de HTML. -->
-      <details class="nav-menu">
-        <summary class="nav-toggle">
-          <span class="nav-toggle__label">Menú</span>
-          <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
-        </summary>
-        <nav class="primary-nav" aria-label="Navegación principal">
-          <ul class="primary-nav__list">
-            <li><a href="index.html" aria-current="page">Inicio</a></li>
-            <li><a href="pages/ps4.html">PS4</a></li>
-            <li><a href="pages/ps5.html">PS5</a></li>
-            <li><a href="pages/xbox.html">Xbox</a></li>
-            <li><a href="pages/nosotros.html">Nosotros</a></li>
-            <li><a href="pages/iniciarSesion.html">Ingresar</a></li>
-            <li><a class="cart-link" href="pages/carrito.html">Carrito</a></li>
-          </ul>
-        </nav>
-      </details>
+      <!-- El checkbox controla el menú móvil solo con HTML y CSS. -->
+      <input class="nav-switch" id="site-navigation" type="checkbox">
+      <label class="nav-toggle" for="site-navigation">
+        <span class="nav-toggle__label">Menú</span>
+        <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+      </label>
+      <nav class="primary-nav" aria-label="Navegación principal">
+        <ul class="primary-nav__list">
+          <li><a href="index.html" aria-current="page">Inicio</a></li>
+          <li><a href="pages/ps4.html">PS4</a></li>
+          <li><a href="pages/ps5.html">PS5</a></li>
+          <li><a href="pages/xbox.html">Xbox</a></li>
+          <li><a href="pages/nosotros.html">Nosotros</a></li>
+          <li><a href="pages/iniciarSesion.html">Ingresar</a></li>
+          <li><a class="cart-link" href="pages/carrito.html">Carrito</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 

@@ -65,7 +65,7 @@ Problemas heredados que se corrigieron:
 8. No modificar las preentregas históricas: sirven como evidencia de progreso y
    actualizar tres copias del mismo sitio generaría mantenimiento duplicado.
 9. Sustituir el desplazamiento horizontal del encabezado por un menú móvil
-   nativo con `details` y `summary`, sin JavaScript.
+   controlado con un checkbox accesible y CSS, sin JavaScript.
 10. Convertir las fichas en composiciones cinematográficas que cambian de
     proporción según el ancho disponible.
 
