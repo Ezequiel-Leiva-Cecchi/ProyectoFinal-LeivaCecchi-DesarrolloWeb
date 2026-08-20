@@ -15,7 +15,8 @@ compras ni almacena datos personales.
 - Estados de foco, contraste y textos alternativos accesibles.
 - Formularios identificados claramente como demostraciones sin backend.
 - Sass dividido por responsabilidad y compilado en un único CSS.
-- Validación automática de HTML y compilación en GitHub Actions.
+- Validación automática de HTML, enlaces, reglas responsive y compilación en
+  GitHub Actions.
 - Eliminación de dependencias visuales externas y enlaces internos rotos.
 
 ## Ejecutar el proyecto

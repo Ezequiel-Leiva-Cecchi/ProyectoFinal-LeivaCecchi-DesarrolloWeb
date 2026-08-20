@@ -9,7 +9,8 @@
     "watch:css": "sass --watch scss/style.scss:css/style.css --style=expanded --no-source-map",
     "validate:html": "html-validate \"index.html\" \"pages/**/*.html\"",
     "validate:links": "node scripts/check-local-links.mjs",
-    "check": "npm run build && npm run validate:html && npm run validate:links",
+    "validate:responsive": "node scripts/check-responsive.mjs",
+    "check": "npm run build && npm run validate:html && npm run validate:links && npm run validate:responsive",
     "test": "npm run check"
   },
   "devDependencies": {
