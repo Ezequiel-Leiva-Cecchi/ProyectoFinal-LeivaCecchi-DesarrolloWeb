@@ -42,6 +42,7 @@ requireText(css, "@media (max-width: 68rem)", "css/style.css");
 requireText(css, ".nav-switch:checked ~ .primary-nav", "css/style.css");
 requireText(css, "overflow-x: clip", "css/style.css");
 requireText(css, "aspect-ratio: 16/10", "css/style.css");
+requireText(css, "object-position: 100% center", "css/style.css");
 requireText(css, "@keyframes card-rise", "css/style.css");
 requireText(css, "@media (prefers-reduced-motion: reduce)", "css/style.css");
 
