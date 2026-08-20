@@ -1,6 +1,6 @@
 # Gamer World
 
-[![Calidad del sitio](https://github.com/Ezequiel-Leiva-Cecchi/ProyectoFinal-LeivaCecchi-DesarrolloWeb/actions/workflows/quality.yml/badge.svg?branch=agent/mejora-html-css)](https://github.com/Ezequiel-Leiva-Cecchi/ProyectoFinal-LeivaCecchi-DesarrolloWeb/actions/workflows/quality.yml)
+[![Calidad del sitio](https://github.com/Ezequiel-Leiva-Cecchi/ProyectoFinal-LeivaCecchi-DesarrolloWeb/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/Ezequiel-Leiva-Cecchi/ProyectoFinal-LeivaCecchi-DesarrolloWeb/actions/workflows/quality.yml)
 
 Gamer World es una experiencia web ficticia para descubrir videojuegos de
 PlayStation 4, PlayStation 5 y Xbox. Nació como proyecto final de Desarrollo
@@ -12,7 +12,7 @@ diseño adaptable a cualquier pantalla.
 
 ## Vista previa
 
-[Abrir Gamer World en el navegador](https://htmlpreview.github.io/?https://github.com/Ezequiel-Leiva-Cecchi/ProyectoFinal-LeivaCecchi-DesarrolloWeb/blob/agent/mejora-html-css/index.html)
+[Abrir Gamer World en el navegador](https://htmlpreview.github.io/?https://github.com/Ezequiel-Leiva-Cecchi/ProyectoFinal-LeivaCecchi-DesarrolloWeb/blob/main/index.html)
 
 ## Características
 
