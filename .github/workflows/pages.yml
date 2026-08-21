@@ -1,0 +1,67 @@
+name: Publicar Gamer World en GitHub Pages
+
+on:
+  push:
+    branches:
+      - agent/github-pages-deploy
+  workflow_dispatch:
+
+# El despliegue sólo puede leer el código y publicar el artefacto de Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  construir:
+    name: Verificar y preparar
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el proyecto
+        uses: actions/checkout@v6
+
+      - name: Preparar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Instalar herramientas
+        run: npm ci
+
+      - name: Compilar y validar el sitio
+        run: npm run check
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Sólo se publica el sitio final; Sass, pruebas y node_modules quedan fuera.
+      - name: Armar la carpeta pública
+        run: |
+          mkdir _site
+          cp index.html _site/
+          cp -R assets css pages _site/
+          touch _site/.nojekyll
+
+      - name: Preparar artefacto
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  publicar:
+    name: Publicar sitio
+    needs: construir
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
