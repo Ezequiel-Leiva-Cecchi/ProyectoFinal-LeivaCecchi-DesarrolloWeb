@@ -3,7 +3,7 @@ name: Publicar Gamer World en GitHub Pages
 on:
   push:
     branches:
-      - agent/github-pages-deploy
+      - main
   workflow_dispatch:
 
 # El despliegue sólo puede leer el código y publicar el artefacto de Pages.
